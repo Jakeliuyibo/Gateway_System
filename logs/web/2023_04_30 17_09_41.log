@@ -1,3 +1,0 @@
-2023-04-30 17:09:42,233 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
-2023-04-30 17:09:44,701 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:09:44] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
-2023-04-30 17:09:44,726 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:09:44] "[37mGET /login/index HTTP/1.1[0m" 200 -

@@ -1,6 +1,0 @@
-2023-04-30 20:14:24,627 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
-2023-04-30 20:14:26,641 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 20:14:26] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
-2023-04-30 20:14:26,655 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 20:14:26] "[37mGET /login/index HTTP/1.1[0m" 200 -
-2023-04-30 20:14:27,660 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 20:14:27] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
-2023-04-30 20:14:27,676 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 20:14:27] "[37mGET /device/index HTTP/1.1[0m" 200 -
-2023-04-30 20:14:28,094 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 20:14:28] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -

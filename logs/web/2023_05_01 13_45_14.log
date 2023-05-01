@@ -1,0 +1,10 @@
+2023-05-01 13:45:15,219 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-05-01 13:45:22,465 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:22] "[32mGET / HTTP/1.1[0m" 302 -
+2023-05-01 13:45:22,478 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:22] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-05-01 13:45:23,592 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:23] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-05-01 13:45:23,608 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:23] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-05-01 13:45:23,918 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:23] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-05-01 13:45:24,821 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:24] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-05-01 13:45:25,010 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:25] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-05-01 13:45:27,288 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:27] "[37mGET /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-05-01 13:45:31,090 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [01/May/2023 13:45:31] "[37mGET /device/task_operation/1 HTTP/1.1[0m" 200 -
