@@ -1,10 +1,10 @@
 # Summary
 
-Date : 2023-04-30 17:42:14
+Date : 2023-05-01 13:43:02
 
 Directory y:\\研究生\\跨越网关\\代码\\Gateway_System
 
-Total : 320 files,  1097159 codes, 42011 comments, 242019 blanks, all 1381189 lines
+Total : 321 files,  1098343 codes, 41993 comments, 241997 blanks, all 1382333 lines
 
 Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
@@ -13,34 +13,34 @@ Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | CSS | 16 | 957,911 | 35,014 | 232,668 | 1,225,593 |
 | JavaScript | 77 | 129,927 | 6,517 | 7,029 | 143,473 |
+| Log | 182 | 3,894 | 0 | 184 | 4,078 |
 | XML | 10 | 3,557 | 3 | 1,669 | 5,229 |
-| Log | 179 | 2,835 | 0 | 223 | 3,058 |
-| Python | 29 | 1,638 | 445 | 382 | 2,465 |
+| Python | 27 | 1,759 | 427 | 399 | 2,585 |
 | HTML | 4 | 1,173 | 30 | 40 | 1,243 |
-| Database | 1 | 99 | 0 | 2 | 101 |
+| Database | 1 | 101 | 0 | 2 | 103 |
 | Markdown | 1 | 9 | 0 | 4 | 13 |
-| pip requirements | 1 | 6 | 0 | 1 | 7 |
+| pip requirements | 1 | 8 | 0 | 1 | 9 |
 | Properties | 2 | 4 | 2 | 1 | 7 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 320 | 1,097,159 | 42,011 | 242,019 | 1,381,189 |
-| . (Files) | 5 | 50 | 16 | 18 | 84 |
-| control | 15 | 831 | 285 | 227 | 1,343 |
+| . | 321 | 1,098,343 | 41,993 | 241,997 | 1,382,333 |
+| . (Files) | 3 | 46 | 6 | 13 | 65 |
+| control | 15 | 940 | 275 | 237 | 1,452 |
 | control\\config | 1 | 1 | 2 | 1 | 4 |
-| control\\src | 14 | 830 | 283 | 226 | 1,339 |
-| control\\src (Files) | 6 | 332 | 131 | 105 | 568 |
+| control\\src | 14 | 939 | 273 | 236 | 1,448 |
+| control\\src (Files) | 6 | 443 | 126 | 117 | 686 |
 | control\\src\\backup | 3 | 158 | 71 | 51 | 280 |
-| control\\src\\driver | 3 | 325 | 76 | 59 | 460 |
+| control\\src\\driver | 3 | 323 | 71 | 57 | 451 |
 | control\\src\\tool | 2 | 15 | 5 | 11 | 31 |
-| db | 1 | 99 | 0 | 2 | 101 |
-| logs | 179 | 2,835 | 0 | 223 | 3,058 |
-| logs\\device | 95 | 1,245 | 0 | 139 | 1,384 |
-| logs\\web | 84 | 1,590 | 0 | 84 | 1,674 |
-| utils | 2 | 35 | 7 | 8 | 50 |
-| web | 118 | 1,093,309 | 41,703 | 241,541 | 1,376,553 |
-| web\\app | 118 | 1,093,309 | 41,703 | 241,541 | 1,376,553 |
+| db | 1 | 101 | 0 | 2 | 103 |
+| logs | 182 | 3,894 | 0 | 184 | 4,078 |
+| logs\\device | 39 | 1,016 | 0 | 41 | 1,057 |
+| logs\\web | 143 | 2,878 | 0 | 143 | 3,021 |
+| utils | 2 | 48 | 9 | 17 | 74 |
+| web | 118 | 1,093,314 | 41,703 | 241,544 | 1,376,561 |
+| web\\app | 118 | 1,093,314 | 41,703 | 241,544 | 1,376,561 |
 | web\\app (Files) | 3 | 119 | 22 | 26 | 167 |
 | web\\app\\models | 1 | 115 | 14 | 25 | 154 |
 | web\\app\\static | 103 | 1,091,395 | 41,534 | 241,366 | 1,374,295 |
@@ -121,8 +121,8 @@ Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-
 | web\\app\\templates\\device | 3 | 1,100 | 10 | 30 | 1,140 |
 | web\\app\\templates\\login | 1 | 73 | 20 | 10 | 103 |
 | web\\app\\utils | 1 | 23 | 16 | 5 | 44 |
-| web\\app\\views | 6 | 484 | 87 | 79 | 650 |
-| web\\app\\views\\device | 2 | 400 | 72 | 63 | 535 |
+| web\\app\\views | 6 | 489 | 87 | 82 | 658 |
+| web\\app\\views\\device | 2 | 405 | 72 | 66 | 543 |
 | web\\app\\views\\index | 2 | 37 | 7 | 8 | 52 |
 | web\\app\\views\\login | 2 | 47 | 8 | 8 | 63 |
 
