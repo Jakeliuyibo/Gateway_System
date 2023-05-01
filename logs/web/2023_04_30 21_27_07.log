@@ -1,0 +1,11 @@
+2023-04-30 21:27:08,238 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 21:27:09,076 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:09] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 21:27:09,089 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:09] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 21:27:10,200 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:10] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 21:27:10,214 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:10] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 21:27:10,453 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:10] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:27:11,149 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:11] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 21:27:11,320 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:11] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 21:27:13,209 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:13] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:27:15,292 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:15] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 21:27:15,302 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:27:15] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

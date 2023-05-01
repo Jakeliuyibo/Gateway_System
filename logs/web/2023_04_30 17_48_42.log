@@ -1,0 +1,28 @@
+2023-04-30 17:48:42,754 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 17:48:44,701 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:44] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 17:48:44,719 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:44] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 17:48:49,668 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:49] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 17:48:49,962 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:49] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 17:48:50,673 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:50] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 17:48:51,819 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:51] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 17:48:52,130 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:52] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 17:48:54,587 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:48:54] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 17:48:56,503 - connection_workflow.py:start[line:179] - INFO: Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
+2023-04-30 17:48:58,544 - io_services_utils.py:_on_writable[line:349] - ERROR: Socket failed to connect: <socket.socket fd=1272, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::', 7903, 0, 0)>; error=10061 (Unknown error)
+2023-04-30 17:48:58,545 - connection_workflow.py:_on_tcp_connection_done[line:375] - ERROR: TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2023-04-30 17:48:58,545 - connection_workflow.py:_report_completion_and_cleanup[line:291] - ERROR: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2023-04-30 17:48:58,545 - connection_workflow.py:start[line:179] - INFO: Pika version 1.3.1 connecting to ('127.0.0.1', 5672)
+2023-04-30 17:49:00,585 - io_services_utils.py:_on_writable[line:349] - ERROR: Socket failed to connect: <socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('0.0.0.0', 7908)>; error=10061 (Unknown error)
+2023-04-30 17:49:00,586 - connection_workflow.py:_on_tcp_connection_done[line:375] - ERROR: TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2023-04-30 17:49:00,586 - connection_workflow.py:_report_completion_and_cleanup[line:291] - ERROR: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2023-04-30 17:49:00,586 - connection_workflow.py:_start_new_cycle_async[line:746] - ERROR: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error').
+2023-04-30 17:49:00,587 - connection_workflow.py:_report_completion_and_cleanup[line:723] - ERROR: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2023-04-30 17:49:00,587 - blocking_connection.py:_create_connection[line:450] - ERROR: Connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2023-04-30 17:49:00,588 - blocking_connection.py:_create_connection[line:457] - ERROR: Error in _create_connection().
+Traceback (most recent call last):
+  File "S:\anaconda3\lib\site-packages\pika\adapters\blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2023-04-30 17:49:00,589 - views.py:add_device_task_to_db[line:322] - ERROR: Task Error: 尝试发布任务（文件160 设备1)到控制软件， 错误原因
+2023-04-30 17:49:00,606 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:49:00] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 17:49:00,930 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 17:49:00] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

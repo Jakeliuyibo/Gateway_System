@@ -1,0 +1,18 @@
+2023-04-30 13:24:21,632 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 13:24:22,160 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:22] "[32mGET /device/index HTTP/1.1[0m" 302 -
+2023-04-30 13:24:22,175 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:22] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 13:24:23,678 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:23] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 13:24:23,979 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:23] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 13:24:24,529 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:24] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:25,938 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:25] "[37mPUT /device/data_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:26,269 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:26] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:28,058 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:28] "[37mPUT /device/data_operation/5 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:28,378 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:28] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:30,134 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:30] "[37mPUT /device/data_operation/9 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:30,446 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:30] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:35,124 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:35] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 13:24:35,425 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:35] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:39,011 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:39] "[37mGET /device/data_operation?value=1&op=loadOptions HTTP/1.1[0m" 200 -
+2023-04-30 13:24:39,019 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:39] "[37mGET /device/task_operation/chart1?selectdaterange=2023-04-20%2C2023-04-30&selectunit=MB&selectdevice=1 HTTP/1.1[0m" 200 -
+2023-04-30 13:24:39,020 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:39] "[36mGET /static/device/amis/charts.js HTTP/1.1[0m" 304 -
+2023-04-30 13:24:39,020 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:24:39] "[37mGET /device/task_operation/chart2?selectdaterange=2023-04-20%2C2023-04-30&selectunit=MB&selectdevice=1 HTTP/1.1[0m" 200 -

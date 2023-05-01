@@ -1,0 +1,19 @@
+2023-04-30 21:26:02,389 - __init__.py:init_device[line:18] - CRITICAL: 初始化网关设备驱动 start...
+2023-04-30 21:26:02,406 - device_manager.py:open[line:63] - INFO: SUCCESS : open device设备('水声通信机0')
+2023-04-30 21:26:02,406 - core_scheduling.py:init_device_list_threadhandle[line:51] - INFO: 设备列表中存在1个设备, 设备0=设备('水声通信机0')
+2023-04-30 21:26:02,421 - connection_workflow.py:start[line:179] - INFO: Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
+2023-04-30 21:26:02,422 - io_services_utils.py:_on_writable[line:345] - INFO: Socket connected: <socket.socket fd=844, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 4152, 0, 0), raddr=('::1', 5672, 0, 0)>
+2023-04-30 21:26:02,434 - connection_workflow.py:_on_transport_establishment_done[line:428] - INFO: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000194EECE14F0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000194EECE14F0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2023-04-30 21:26:02,434 - connection_workflow.py:_report_completion_and_cleanup[line:293] - INFO: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000194EECE14F0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 21:26:02,434 - connection_workflow.py:_report_completion_and_cleanup[line:725] - INFO: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000194EECE14F0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 21:26:02,434 - blocking_connection.py:_create_connection[line:453] - INFO: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000194EECE14F0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 21:26:02,434 - blocking_connection.py:__init__[line:1264] - INFO: Created channel=1
+2023-04-30 21:26:02,434 - core_scheduling.py:monitor_web_task_threadhandle[line:176] - CRITICAL: SUCCESS : Create Pika server.
+2023-04-30 21:26:15,521 - core_scheduling.py:deal_data_forwarding_processhandle[line:72] - CRITICAL: 线程池接收到task = 任务(文件storage/device/acoustic/2023_04_30 21_26_15 设备设备('水声通信机0') 方向mTaskFlowDirectionEnum.DIRECT_DEVICE_TO_FILE 优先级mTaskPriorityEnum.PRIOR_LOW)
+2023-04-30 21:26:20,537 - bsp_underwater_acoustic_comm.py:_read_bytes[line:205] - CRITICAL: 水声通信设备(端口'COM5' 状态True) 接收到一帧数据b'f\xbb'
+2023-04-30 21:26:20,537 - bsp_underwater_acoustic_comm.py:_read_bytes[line:208] - WARNING: WARNING : 水声通信设备(端口'COM5' 状态True) read frame length is not 57
+2023-04-30 21:26:20,537 - bsp_underwater_acoustic_comm.py:_read_bytes[line:210] - WARNING: WARNING : 水声通信设备(端口'COM5' 状态True) read frmae without header b'U\xaa6'
+2023-04-30 21:26:20,537 - bsp_underwater_acoustic_comm.py:_read_bytes[line:216] - WARNING: WARNING : 水声通信设备(端口'COM5' 状态True) read frmae without end b'\r\n'
+2023-04-30 21:26:20,539 - bsp_underwater_acoustic_comm.py:read[line:158] - ERROR: 水声通信设备(端口'COM5' 状态True)读取文件发生错误, 错误原因： 未接收到正确的CMD CMD_FILENAME
+2023-04-30 21:26:20,539 - core_scheduling.py:deal_data_forwarding_processhandle[line:92] - ERROR: ERROR   : 线程池处理任务(文件2023_04_30 21_26_15，设备设备('水声通信机0')
+2023-04-30 21:26:20,544 - core_scheduling.py:deal_data_forwarding_callback[line:119] - ERROR: 线程池处理任务task device rec 2023-04-30 21:26:15回调出现错误, 错误原因No active exception to reraise

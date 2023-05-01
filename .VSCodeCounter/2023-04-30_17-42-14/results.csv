@@ -1,0 +1,322 @@
+"filename", "language", "Log", "Python", "Markdown", "pip requirements", "HTML", "JavaScript", "CSS", "XML", "Database", "Properties", "comment", "blank", "total"
+"y:\研究生\跨越网关\代码\Gateway_System\README.md", "Markdown", 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 4, 13
+"y:\研究生\跨越网关\代码\Gateway_System\control\config\device.conf", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\__init__.py", "Python", 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7, 22
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\backup\core_scheduling backup.py", "Python", 0, 102, 0, 0, 0, 0, 0, 0, 0, 0, 50, 33, 185
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\backup\forwarding_rule.conf", "Properties", 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\backup\forwarding_rule.py", "Python", 0, 53, 0, 0, 0, 0, 0, 0, 0, 0, 21, 18, 92
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\config.py", "Python", 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 27
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\core_scheduling.py", "Python", 0, 96, 0, 0, 0, 0, 0, 0, 0, 0, 60, 39, 195
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\device_manager.py", "Python", 0, 135, 0, 0, 0, 0, 0, 0, 0, 0, 31, 33, 199
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\driver\bsp_underwater_acoustic_comm.py", "Python", 0, 163, 0, 0, 0, 0, 0, 0, 0, 0, 38, 32, 233
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\driver\msatellite.py", "Python", 0, 85, 0, 0, 0, 0, 0, 0, 0, 0, 18, 15, 118
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\driver\mserial.py", "Python", 0, 77, 0, 0, 0, 0, 0, 0, 0, 0, 20, 12, 109
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\task_queue.py", "Python", 0, 47, 0, 0, 0, 0, 0, 0, 0, 0, 25, 14, 86
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\test_for_pika.py", "Python", 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 11, 8, 39
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\tool\mformatconv.py", "Python", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 10
+"y:\研究生\跨越网关\代码\Gateway_System\control\src\tool\mlocaltime.py", "Python", 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 4, 8, 21
+"y:\研究生\跨越网关\代码\Gateway_System\db\gateway.db", "Database", 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 2, 101
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 13_22_36.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 13_23_21.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 13_23_23.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 13_24_21.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 13_27_59.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_04_18.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_05_18.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_05_49.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_07_02.log", "Log", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_07_24.log", "Log", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_15_19.log", "Log", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_15_35.log", "Log", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_16_32.log", "Log", 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_18_33.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_21_10.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_26_35.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_29_47.log", "Log", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_29_59.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_32_59.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_33_49.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_34_01.log", "Log", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_34_43.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_35_24.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_37_06.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_38_46.log", "Log", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 41
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_40_38.log", "Log", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 41
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_47_32.log", "Log", 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 42
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_48_22.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_50_52.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_56_52.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_59_12.log", "Log", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 14_59_32.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_02_47.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_03_09.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_03_43.log", "Log", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_04_30.log", "Log", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_21_41.log", "Log", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 20
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_31_59.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_35_51.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_41_20.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_47_05.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 15_55_27.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_03_33.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_03_51.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_05_49.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_06_44.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_07_18.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_08_22.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_10_08.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_10_27.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_11_25.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_11_50.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_12_00.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_14_26.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_16_51.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_18_37.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_20_10.log", "Log", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_21_13.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_21_31.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_27_54.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_29_43.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_32_43.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_32_54.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_34_30.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_35_33.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_37_03.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_39_21.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_41_22.log", "Log", 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 41
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_50_43.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 16_59_14.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_01_11.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_01_37.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_05_17.log", "Log", 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 74
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_06_44.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_07_20.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_09_13.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_09_41.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_10_14.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_11_13.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_13_28.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_14_20.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_15_34.log", "Log", 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 74
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_16_26.log", "Log", 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 43
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_18_16.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_19_39.log", "Log", 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 40
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_20_26.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_21_31.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_22_40.log", "Log", 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 36
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_23_54.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_25_17.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_26_13.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_26_42.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_27_56.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_32_30.log", "Log", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"y:\研究生\跨越网关\代码\Gateway_System\logs\device\2023_04_30 17_32_52.log", "Log", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_22_34.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_22_36.log", "Log", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 22
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_23_21.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_23_22.log", "Log", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_24_21.log", "Log", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 19
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 13_27_59.log", "Log", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_04_18.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_05_18.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_05_49.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_07_02.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_07_24.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_15_19.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_15_34.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_16_31.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_18_33.log", "Log", 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 26
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_21_10.log", "Log", 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_26_35.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_29_47.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_29_59.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_32_58.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_33_48.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_34_01.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_34_43.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_35_23.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_37_06.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_38_46.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_40_38.log", "Log", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 19
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_47_31.log", "Log", 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 22
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_48_22.log", "Log", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_50_52.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_56_52.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_59_11.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 14_59_32.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_02_47.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_03_08.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_03_43.log", "Log", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_04_30.log", "Log", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_21_41.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_31_59.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_35_51.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_41_20.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 15_47_05.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_14_26.log", "Log", 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 52
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_16_51.log", "Log", 53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 54
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_18_37.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_20_10.log", "Log", 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 51
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_21_13.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_21_31.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_27_53.log", "Log", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 20
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_29_42.log", "Log", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 20
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_32_43.log", "Log", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_32_54.log", "Log", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 20
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_34_30.log", "Log", 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 20
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_35_32.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_37_03.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_39_21.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_41_22.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_50_43.log", "Log", 73, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 74
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 16_59_14.log", "Log", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_01_11.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_01_36.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_05_17.log", "Log", 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 55
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_06_43.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_07_20.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_09_13.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_09_41.log", "Log", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_10_14.log", "Log", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_11_12.log", "Log", 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 38
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_13_28.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_14_20.log", "Log", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_15_34.log", "Log", 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 53
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_16_26.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_18_16.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_19_39.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_20_26.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_21_31.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_22_39.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_23_53.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_25_17.log", "Log", 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 29
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_26_13.log", "Log", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_26_42.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_27_56.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_32_30.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\logs\web\2023_04_30 17_32_51.log", "Log", 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 30
+"y:\研究生\跨越网关\代码\Gateway_System\main.py", "Python", 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 21
+"y:\研究生\跨越网关\代码\Gateway_System\pika_trans.py", "Python", 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2, 21
+"y:\研究生\跨越网关\代码\Gateway_System\requirements.txt", "pip requirements", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\test.py", "Python", 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 22
+"y:\研究生\跨越网关\代码\Gateway_System\utils\get_time.py", "Python", 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 15
+"y:\研究生\跨越网关\代码\Gateway_System\utils\mlogging.py", "Python", 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 35
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\__init__.py", "Python", 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 57
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\config.py", "Python", 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 10, 9, 71
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\models\models.py", "Python", 0, 115, 0, 0, 0, 0, 0, 0, 0, 0, 14, 25, 154
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\public.py", "Python", 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 39
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\ang-ie11.css", "CSS", 0, 0, 0, 0, 0, 0, 87921, 0, 0, 0, 3173, 22989, 114083
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\ang.css", "CSS", 0, 0, 0, 0, 0, 0, 90214, 0, 0, 0, 3173, 22995, 116382
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\antd-ie11.css", "CSS", 0, 0, 0, 0, 0, 0, 87920, 0, 0, 0, 3173, 22989, 114082
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\antd.css", "CSS", 0, 0, 0, 0, 0, 0, 90193, 0, 0, 0, 3173, 22994, 116360
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\barcode.js", "JavaScript", 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 100
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\charts.js", "JavaScript", 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 45, 0, 77
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\codemirror.js", "JavaScript", 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 14
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\color-picker.js", "JavaScript", 0, 0, 0, 0, 0, 130, 0, 0, 0, 0, 0, 0, 130
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\cropperjs.js", "JavaScript", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 9, 0, 14
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\cxd-ie11.css", "CSS", 0, 0, 0, 0, 0, 0, 87920, 0, 0, 0, 3173, 22989, 114082
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\cxd.css", "CSS", 0, 0, 0, 0, 0, 0, 90189, 0, 0, 0, 3173, 22994, 116356
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\dark-ie11.css", "CSS", 0, 0, 0, 0, 0, 0, 87920, 0, 0, 0, 3173, 22989, 114082
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\dark.css", "CSS", 0, 0, 0, 0, 0, 0, 90195, 0, 0, 0, 3173, 22994, 116362
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\exceljs.js", "JavaScript", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 30, 4, 44
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\helper.css", "CSS", 0, 0, 0, 0, 0, 0, 44655, 0, 0, 0, 2930, 0, 47585
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\iconfont.css", "CSS", 0, 0, 0, 0, 0, 0, 2404, 0, 0, 0, 0, 1, 2405
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\iconfont.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 848, 0, 0, 3, 1663, 2514
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\ie11-patch.css", "CSS", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 2
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\locale\de-DE.js", "JavaScript", 0, 0, 0, 0, 0, 405, 0, 0, 0, 0, 0, 3, 408
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\markdown.js", "JavaScript", 0, 0, 0, 0, 0, 136, 0, 0, 0, 0, 0, 0, 136
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\papaparse.js", "JavaScript", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 6, 3, 13
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\rest.js", "JavaScript", 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 32
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\rich-text.js", "JavaScript", 0, 0, 0, 0, 0, 123, 0, 0, 0, 0, 158, 118, 399
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\sdk-ie11.css", "CSS", 0, 0, 0, 0, 0, 0, 87920, 0, 0, 0, 3173, 22989, 114082
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\sdk.css", "CSS", 0, 0, 0, 0, 0, 0, 90189, 0, 0, 0, 3173, 22994, 116356
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\sdk.js", "JavaScript", 0, 0, 0, 0, 0, 3439, 0, 0, 0, 0, 236, 114, 3789
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\hls.js\hls.js", "JavaScript", 0, 0, 0, 0, 0, 92, 0, 0, 0, 0, 273, 0, 365
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\base\worker\workerMain.js", "JavaScript", 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 8, 2, 18
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\apex\apex.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\azcli\azcli.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\bat\bat.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\clojure\clojure.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\coffee\coffee.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\cpp\cpp.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\csharp\csharp.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\css\css.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\dockerfile\dockerfile.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\fsharp\fsharp.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\go\go.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\handlebars\handlebars.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\html\html.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\ini\ini.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\java\java.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\javascript\javascript.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\less\less.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\lua\lua.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\markdown\markdown.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\msdax\msdax.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\objective-c\objective-c.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\php\php.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\postiats\postiats.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\powershell\powershell.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\pug\pug.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\python\python.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\r\r.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\razor\razor.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\redis\redis.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\redshift\redshift.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\ruby\ruby.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\rust\rust.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\sb\sb.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\scheme\scheme.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\scss\scss.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\shell\shell.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\solidity\solidity.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\sql\sql.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\st\st.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\swift\swift.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 9, 0, 10
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\typescript\typescript.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\vb\vb.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\xml\xml.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\basic-languages\yaml\yaml.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\editor\editor.main.css", "CSS", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 5, 0, 6
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\editor\editor.main.js", "JavaScript", 0, 0, 0, 0, 0, 661, 0, 0, 0, 0, 58, 90, 809
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\editor\editor.main.nls.js", "JavaScript", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 6, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\editor\editor.main.nls.zh-cn.js", "JavaScript", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 6, 1, 13
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\css\cssMode.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\css\cssWorker.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\html\htmlMode.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\html\htmlWorker.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\json\jsonMode.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\json\jsonWorker.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\typescript\tsMode.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 6, 0, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\language\typescript\tsWorker.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 20, 0, 21
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\monaco-editor\min\vs\loader.js", "JavaScript", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 6, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\thirds\mpegts.js\mpegts.js", "JavaScript", 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 7, 0, 9
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\amis\tinymce.js", "JavaScript", 0, 0, 0, 0, 0, 109, 0, 0, 0, 0, 1, 0, 110
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\fonts\fontawesome-webfont.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 2671, 0, 0, 0, 1, 2672
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\backkeys.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 8
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\close.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\file.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\forwardkeys.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 1, 11
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\more.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\nav.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\notes.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 4
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\icons\search.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 1, 7
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\css\style.css", "CSS", 0, 0, 0, 0, 0, 0, 19982, 0, 0, 0, 334, 2749, 23065
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\js\app.js", "JavaScript", 0, 0, 0, 0, 0, 61878, 0, 0, 0, 0, 2669, 3345, 67892
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\js\data.js", "JavaScript", 0, 0, 0, 0, 0, 799, 0, 0, 0, 0, 0, 1, 800
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\scripts\app.js", "JavaScript", 0, 0, 0, 0, 0, 61878, 0, 0, 0, 0, 2669, 3345, 67892
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\device\scripts\data.js", "JavaScript", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\login\css\style.css", "CSS", 0, 0, 0, 0, 0, 0, 287, 0, 0, 0, 15, 1, 303
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\static\login\js\jquery-2.2.3.min.js", "JavaScript", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 1, 5
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\templates\device\base.html", "HTML", 0, 0, 0, 0, 122, 0, 0, 0, 0, 0, 6, 10, 138
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\templates\device\data.html", "HTML", 0, 0, 0, 0, 442, 0, 0, 0, 0, 0, 2, 8, 452
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\templates\device\index.html", "HTML", 0, 0, 0, 0, 536, 0, 0, 0, 0, 0, 2, 12, 550
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\templates\login\login.html", "HTML", 0, 0, 0, 0, 73, 0, 0, 0, 0, 0, 20, 10, 103
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\utils\get_time.py", "Python", 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 16, 5, 44
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\device\__init__.py", "Python", 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 22
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\device\views.py", "Python", 0, 385, 0, 0, 0, 0, 0, 0, 0, 0, 68, 60, 513
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\index\__init__.py", "Python", 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 16
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\index\views.py", "Python", 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 5, 6, 36
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\login\__init__.py", "Python", 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 20
+"y:\研究生\跨越网关\代码\Gateway_System\web\app\views\login\views.py", "Python", 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 43
+"Total", "-", 2835, 1638, 9, 6, 1173, 129927, 957911, 3557, 99, 4, 42011, 242019, 1381189

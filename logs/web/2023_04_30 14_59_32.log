@@ -1,0 +1,12 @@
+2023-04-30 14:59:33,098 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 14:59:33,621 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:33] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 14:59:33,635 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:33] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 14:59:34,922 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:34] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 14:59:34,940 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:34] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 14:59:35,179 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:35] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:59:39,035 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:39] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 14:59:39,203 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:39] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 14:59:41,531 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:41] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:59:43,565 - views.py:add_device_task_to_db[line:314] - CRITICAL: web添加任务任务(文件storage/upload\test.txt 设备1 方向mTaskFlowDirectionEnum.DIRECT_FILE_TO_DEVICE 优先级mTaskPriorityEnum.PRIOR_LOW)
+2023-04-30 14:59:43,581 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:43] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 14:59:43,591 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:59:43] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

@@ -1,0 +1,12 @@
+2023-04-30 21:31:01,809 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 21:31:07,977 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:07] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 21:31:07,999 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:07] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 21:31:09,240 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:09] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 21:31:09,267 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:09] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 21:31:09,513 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:09] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:31:10,066 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:10] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 21:31:10,254 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:10] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 21:31:12,140 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:12] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:31:14,178 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:14] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 21:31:14,192 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:31:14] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 21:31:40,890 - views.py:add_task_to_control_software[line:295] - ERROR: Task Error: 尝试发布任务到控制软件， 错误原因Instance <Tasks at 0x212d08a74c0> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/14/bhk3)

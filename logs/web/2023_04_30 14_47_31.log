@@ -1,0 +1,21 @@
+2023-04-30 14:47:32,455 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 14:47:38,638 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:38] "[32mGET / HTTP/1.1[0m" 302 -
+2023-04-30 14:47:38,655 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:38] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 14:47:38,714 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:38] "[36mGET /static/login/css/style.css HTTP/1.1[0m" 304 -
+2023-04-30 14:47:38,716 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:38] "[36mGET /static/login/js/jquery-2.2.3.min.js HTTP/1.1[0m" 304 -
+2023-04-30 14:47:38,748 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:38] "[36mGET /static/login/images/background.jpg HTTP/1.1[0m" 304 -
+2023-04-30 14:47:39,743 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 14:47:39,766 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 14:47:39,810 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[36mGET /static/device/amis/sdk.css HTTP/1.1[0m" 304 -
+2023-04-30 14:47:39,810 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[36mGET /static/device/amis/helper.css HTTP/1.1[0m" 304 -
+2023-04-30 14:47:39,811 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[36mGET /static/device/amis/iconfont.css HTTP/1.1[0m" 304 -
+2023-04-30 14:47:39,812 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:39] "[37mGET /static/device/amis/sdk.js HTTP/1.1[0m" 200 -
+2023-04-30 14:47:40,127 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:40] "[37mGET /static/device/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 200 -
+2023-04-30 14:47:40,145 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:40] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:47:40,258 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-04-30 14:47:42,129 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:42] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 14:47:42,338 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:42] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 14:47:45,309 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:45] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:47:47,671 - views.py:add_device_task_to_db[line:312] - CRITICAL: mdevicelist大小0
+2023-04-30 14:47:47,688 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:47] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 14:47:47,698 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:47:47] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

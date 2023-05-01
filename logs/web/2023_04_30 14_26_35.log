@@ -1,0 +1,12 @@
+2023-04-30 14:26:36,318 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 14:26:40,877 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:40] "[32mGET /device/data HTTP/1.1[0m" 302 -
+2023-04-30 14:26:40,901 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:40] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 14:26:42,125 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:42] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 14:26:42,144 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:42] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 14:26:42,379 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:42] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:26:43,715 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:43] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 14:26:43,906 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:43] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 14:26:46,697 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:46] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:26:49,496 - views.py:add_device_task_to_db[line:315] - ERROR: Task Error: 尝试发布任务（文件160）到设备1， 错误原因list index out of range
+2023-04-30 14:26:49,513 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:49] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 14:26:49,756 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:26:49] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

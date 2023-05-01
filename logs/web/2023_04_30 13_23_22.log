@@ -1,0 +1,10 @@
+2023-04-30 13:23:23,466 - _internal.py:_log[line:113] - WARNING:  * Debugger is active!
+2023-04-30 13:23:23,468 - _internal.py:_log[line:113] - INFO:  * Debugger PIN: 504-467-380
+2023-04-30 13:23:23,486 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 13:23:24,007 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:24] "[32mGET /device/index HTTP/1.1[0m" 302 -
+2023-04-30 13:23:24,022 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:24] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 13:23:25,601 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:25] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 13:23:25,894 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:25] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 13:23:26,454 - _internal.py:_log[line:113] - INFO:  * Detected change in 'S:\\anaconda3\\Lib\\site-packages\\flask\\__pycache__\\debughelpers.cpython-39.pyc', reloading
+2023-04-30 13:23:26,457 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:26] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 13:23:26,481 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 13:23:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

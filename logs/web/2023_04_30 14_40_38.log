@@ -1,0 +1,18 @@
+2023-04-30 14:40:38,823 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 14:40:42,733 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:42] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:40:44,973 - views.py:add_device_task_to_db[line:314] - CRITICAL: mdevicelist大小0
+2023-04-30 14:40:44,973 - views.py:add_device_task_to_db[line:318] - ERROR: Task Error: 尝试发布任务（文件160）到设备1， 错误原因list index out of range
+2023-04-30 14:40:44,990 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:44] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 14:40:45,309 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:45] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 14:40:51,144 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:51] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 14:40:51,445 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:51] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 14:40:52,671 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:52] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 14:40:52,692 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:52] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 14:40:52,924 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:52] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:40:54,568 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:54] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 14:40:54,766 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:54] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 14:40:56,866 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:40:56] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 14:41:00,488 - views.py:add_device_task_to_db[line:314] - CRITICAL: mdevicelist大小0
+2023-04-30 14:41:00,488 - views.py:add_device_task_to_db[line:318] - ERROR: Task Error: 尝试发布任务（文件160）到设备1， 错误原因list index out of range
+2023-04-30 14:41:00,503 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:41:00] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 14:41:00,741 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 14:41:00] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

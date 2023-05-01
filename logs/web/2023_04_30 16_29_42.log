@@ -1,0 +1,19 @@
+2023-04-30 16:29:43,593 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 16:29:45,693 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:45] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 16:29:45,708 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:45] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 16:29:46,760 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:46] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 16:29:46,779 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:46] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 16:29:47,033 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:47] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 16:29:47,833 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:47] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 16:29:48,020 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:48] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 16:29:50,193 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:50] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 16:29:52,432 - connection_workflow.py:start[line:179] - INFO: Pika version 1.3.1 connecting to ('::1', 5672, 0, 0)
+2023-04-30 16:29:52,432 - io_services_utils.py:_on_writable[line:345] - INFO: Socket connected: <socket.socket fd=1124, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 13792, 0, 0), raddr=('::1', 5672, 0, 0)>
+2023-04-30 16:29:52,433 - connection_workflow.py:_on_transport_establishment_done[line:428] - INFO: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000298E8449A00>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000298E8449A00> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2023-04-30 16:29:52,436 - connection_workflow.py:_report_completion_and_cleanup[line:293] - INFO: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000298E8449A00> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 16:29:52,437 - connection_workflow.py:_report_completion_and_cleanup[line:725] - INFO: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000298E8449A00> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 16:29:52,437 - blocking_connection.py:_create_connection[line:453] - INFO: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000298E8449A00> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2023-04-30 16:29:52,437 - blocking_connection.py:__init__[line:1264] - INFO: Created channel=1
+2023-04-30 16:29:52,438 - views.py:add_device_task_to_db[line:316] - ERROR: Task Error: 尝试发布任务（文件160 设备1)到控制软件， 错误原因unhashable type: 'slice'
+2023-04-30 16:29:52,454 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:52] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 16:29:52,464 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 16:29:52] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -

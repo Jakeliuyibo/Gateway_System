@@ -1,0 +1,12 @@
+2023-04-30 21:29:31,356 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-04-30 21:29:32,157 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:32] "[32mGET /device/data?perPage=10&page=1 HTTP/1.1[0m" 302 -
+2023-04-30 21:29:32,174 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:32] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-04-30 21:29:33,031 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:33] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-04-30 21:29:33,055 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:33] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-04-30 21:29:33,287 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:33] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:29:33,825 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:33] "[37mGET /device/data HTTP/1.1[0m" 200 -
+2023-04-30 21:29:34,008 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:34] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
+2023-04-30 21:29:36,011 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:36] "[37mGET /device/file_operation/upload?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-04-30 21:29:38,618 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:38] "[37mPOST /device/task_operation/1 HTTP/1.1[0m" 200 -
+2023-04-30 21:29:38,618 - views.py:add_task_to_control_software[line:295] - ERROR: Task Error: 尝试发布任务到控制软件， 错误原因'NoneType' object has no attribute 'twophase'
+2023-04-30 21:29:38,626 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [30/Apr/2023 21:29:38] "[37mGET /device/data_operation?perPage=10&page=1 HTTP/1.1[0m" 200 -
