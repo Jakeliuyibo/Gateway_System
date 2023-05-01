@@ -1,0 +1,2 @@
+生成requirements.txt命令：pipreqs ./ --encoding=utf-8
+统计工程代码量：ctrl+shift+p - count lines in directory
