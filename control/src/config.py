@@ -3,13 +3,13 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-04-29 22:20:06
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-04-30 21:05:36
+LastEditTime: 2023-05-03 16:15:29
 FilePath: \Gateway_System\config.py
 Description: 全局配置
 '''
 import os
 import logging
-from utils.get_time import get_current_time, get_current_time_apply_to_filename
+from .utils.get_time import get_current_time_apply_to_filename
 
 '''
 description: 配置

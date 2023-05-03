@@ -3,14 +3,14 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-04-29 21:35:29
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-01 13:38:19
+LastEditTime: 2023-05-03 16:55:39
 FilePath: \Gateway_System\main.py
 Description: 主函数，通过python main.py启动网关软件
 '''
 
 
 from multiprocessing import Process
-from web.app import create_app
+from web.app import create_app, run_test_server
 from control.src import init_device
 
 '''
@@ -19,9 +19,9 @@ description: 进程：运行网关设备管理APP
 def create_web():
     # create flask app
     web_app = create_app("develop")
-
-    # execute app
-    web_app.run(host="localhost", port="1234", debug=False)
+    
+    # # execute app
+    run_test_server(web_app)
     
 '''
 description: 进程：运行网关设备控制APP
@@ -35,9 +35,9 @@ if __name__ == "__main__":
     proc_control = Process(target=create_control, args=())
     proc_control.start()
     
-    # # 创建web进程
-    proc_web = Process(target=create_web, args=())
-    proc_web.start()
+    # # # 创建web进程
+    # proc_web = Process(target=create_web, args=())
+    # proc_web.start()
     
     proc_control.join()
-    proc_web.join()
+    # proc_web.join()

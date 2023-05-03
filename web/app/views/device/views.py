@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-10 22:08:05
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-04-30 21:31:45
+LastEditTime: 2023-05-03 16:52:22
 FilePath: \Gateway_Management_System\app\views\device\views.py
 Description: 注册device模块的view视图
 '''
@@ -198,7 +198,7 @@ def receive_file_from_web():
     file_local_storage_path = Config.UPLOAD_FILE_STORAGE_PATH
     
     if os.path.exists(file_local_storage_path+file_name):
-        logging.error("UPLOAD Error: try to upload existed file {file_name}")
+        logging.error(f"UPLOAD Error: try to upload existed file {file_name}")
         return amis_ret(data={}, status=-1, msg="已存在相同命名文件")
     else:
         try:
@@ -319,13 +319,18 @@ def add_device_task_to_db(device_id):
                                 "priority"  :   "PRIOR_LOW"}
                     
                     # 通过pika队列向控制软件发布任务
-                    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', '5672'))
-                    channel = connection.channel()
-                    channel.basic_publish(
-                        exchange='',                        # RabbitMQ中所有的消息都要先通过交换机，空字符串表示使用默认的交换机
-                        routing_key='web_task_queue',       # 指定消息要发送到哪个queue
-                        body=str(web_task))                 # 消息的内容
-                    connection.close()
+                    try:
+                        connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', '5672'))
+                        channel = connection.channel()
+                        channel.basic_publish(
+                            exchange='',                        # RabbitMQ中所有的消息都要先通过交换机，空字符串表示使用默认的交换机
+                            routing_key='web_task_queue',       # 指定消息要发送到哪个queue
+                            body=str(web_task))                 # 消息的内容
+                    except Exception as e:
+                        logging.error(f"建立与控制软件的Pika RabbitMQ连接错误 {e}")
+                    finally:
+                        connection.close()
+                        
                 except Exception as e:
                     logging.error(f"Task Error: 尝试发布任务到控制软件， 错误原因{e}")
 

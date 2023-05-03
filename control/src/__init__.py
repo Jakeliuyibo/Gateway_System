@@ -2,7 +2,7 @@
 
 import logging
 from control.src.core_scheduling import test_for_core_scheduling
-from utils.mlogging import logs_init
+from .utils.mlogging import logs_init
 from .config import Config
 
 
@@ -19,4 +19,4 @@ def init_device():
     
     test_for_core_scheduling()
     
-    logging.critical("初始化网关设备驱动 end...")
+    logging.error("网关设备驱动异常 end...")

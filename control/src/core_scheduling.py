@@ -4,7 +4,7 @@ import multiprocessing
 import pika
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
 
-from utils.get_time import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
+from .utils.get_time import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
 
 
 from .device_manager     import *

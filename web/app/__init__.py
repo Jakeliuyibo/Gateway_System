@@ -4,23 +4,26 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 12:47:25
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-04-29 23:06:58
+LastEditTime: 2023-05-03 16:16:32
 FilePath: \Gateway_Management_System\app\__init__.py
 Description: app文件夹自动初始化文件，创建Flask对象
 '''
-from utils.mlogging import logs_init
+from .utils.mlogging import logs_init
 from .config import config_dict
-import logging
 from redis import StrictRedis
 from flask import Flask
 from flask.logging import default_handler
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
+import logging
 
 # 声明全局变量
 db          = SQLAlchemy()      # 创建数据库ROM变量
 redis_store = None              # 创建redis变量
 
+'''
+description: 创建Flask APP
+'''
 def create_app(config_name):
     # create flask object
     app = Flask(__name__)
@@ -33,7 +36,9 @@ def create_app(config_name):
     if config_obj.LOGGING_CONFIG_ABLE:
         mloger = logs_init(config_obj)
         app.logger.addHandler(mloger)
-
+    
+    logging.critical(f"数据库地址{config_obj.SQLALCHEMY_DATABASE_URI}")
+    
     # 关联数据库ROM和Flask对象
     db.init_app(app)
 
@@ -54,3 +59,11 @@ def create_app(config_name):
     app.register_blueprint(device_blue)         # register device blue
 
     return app
+
+
+'''
+description: 运行测试APP
+'''
+def run_test_server(app):
+    # execute app
+    app.run(host="localhost", port="1234", debug=False)

@@ -25,13 +25,14 @@ def index():
     if ret:
         rqu_user_name = ret.get("Username")
         rqu_password = ret.get("Password")
-
+        logging.critical(f"接收到用户{rqu_user_name}浏览器登录访问")
         # 查询数据库中用户数据
         try:
             db.session.query(User).filter(and_(User.user_name == rqu_user_name, User.user_password == rqu_password)).one()
         except:
             # 设置cookie，有效期 3600 sec
             session['login_flag'] = "fail"
+            logging.error("未从数据库查找到用户信息")
         else:
             session['login_flag'] = "success"
             session['user_name']  = rqu_user_name

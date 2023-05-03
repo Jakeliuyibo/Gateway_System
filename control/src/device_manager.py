@@ -1,11 +1,8 @@
 
-import os, sys, time
+import time
 import logging
 from enum import Enum
 import threading
-import multiprocessing
-
-from utils.get_time import get_current_time
 from .driver.bsp_underwater_acoustic_comm import mUnderwaterAscousticCommDevice
 
 # from driver.msatellite import *
