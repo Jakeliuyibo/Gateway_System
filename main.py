@@ -12,7 +12,14 @@ Description: 主函数，通过python main.py启动网关软件
 from multiprocessing import Process
 from web.app import create_app, run_test_server
 from control.src import init_device
-
+    
+'''
+description: 进程：运行网关设备控制APP
+'''
+def create_control():
+    # init device
+    init_device()
+    
 '''
 description: 进程：运行网关设备管理APP
 '''
@@ -22,13 +29,6 @@ def create_web():
     
     # # execute app
     run_test_server(web_app)
-    
-'''
-description: 进程：运行网关设备控制APP
-'''
-def create_control():
-    # init device
-    init_device()
     
 if __name__ == "__main__":
     # 创建driver进程

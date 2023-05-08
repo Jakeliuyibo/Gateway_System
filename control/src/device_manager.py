@@ -3,7 +3,8 @@ import time
 import logging
 from enum import Enum
 import threading
-from .driver.bsp_underwater_acoustic_comm import mUnderwaterAscousticCommDevice
+from .driver.bsp_underwater_acoustic_comm   import mUnderwaterAscousticCommDevice
+from .driver.bsp_satellite_comm             import mSatelliteCommDevice
 
 # from driver.msatellite import *
 from .tool.mlocaltime   import *
@@ -26,37 +27,33 @@ Args:
     description         : device descirption
 """
 class mDevice(object):
-    
     """ init param and create device object  """
     def __init__(self, device_id: int, device_name: str, device_type: str, device_status: int, device_property: str, device_description: str):
         self.device_id          = device_id
         self.device_name        = device_name
         self.device_type        = device_type
         self.device_status      = device_status
-        self.device_property    = device_property
+        self.device_property    = eval(device_property)
         self.device_description = device_description
         
         # 解析device_property属性字段
-
-        self.storage_filepath   = storage_filepath
-
+        self.device_interface   = self.device_property.get("interface") 
+        self.storage_filepath   = self.device_property.get("storage_filepath")
 
         # init device obj according to identify
         self.device_obj        = None
         self.is_Open           = False
-        if self.identify    == "satellite":
-            self.device_obj = mSatelliteDevice(self.device)
-        elif self.identify  == "underwateracoustic":
-            self.device_obj = mUnderwaterAscousticCommDevice(self.device)
+        self._wlock            = threading.Lock()               # device write lock
+        if self.device_name    == "satellite comm module":
+            self.device_obj = mSatelliteCommDevice(self.device_interface)
+        elif self.device_name  == "underwater acoustic comm module":
+            self.device_obj = mUnderwaterAscousticCommDevice(self.device_interface)
         else:
             # TODO 添加设备
             pass
 
-        # create device write lock
-        self._wlock        = threading.Lock()
-        
     def __repr__(self):
-        return '设备(%r)' % (self.description)
+        return '设备(%r)' % (self.device_description)
     
     """ 打开设备            """
     def open(self):
@@ -65,7 +62,7 @@ class mDevice(object):
             if not self.device_obj.isOpen():
                 raise
             self.is_Open       = True
-            logging.info(f"SUCCESS : open device{self}")
+            logging.critical(f"SUCCESS : open device {self}")
         except Exception as e:
             logging.error(f"ERROR   : {self} try to open device")
             self.device_obj = None
@@ -73,9 +70,15 @@ class mDevice(object):
     """ 关闭设备            """
     def close(self):
         try:
-            if self.device_obj:
-                self.device_obj.close()
+            if not self.device_obj:
+                raise
+    
+            self.device_obj.close()
+            self.device_obj = None
+            self.is_Open    = False
+            logging.critical(f"SUCCESS : close device {self}")
         except Exception as e:
+            self.is_Open        = False
             logging.error(f"ERROR   : {self} try to close device")
 
     """ 向设备写入数据      """
@@ -89,7 +92,7 @@ class mDevice(object):
             else:
                 raise
         except Exception as e:
-            print(f"ERROR   : {self} try to write data")
+            logging.error(f"ERROR   : {self} try to write data")
             return -1
 
     """ 检测设备是否可读     """
@@ -98,7 +101,7 @@ class mDevice(object):
             if self.is_Open and self.device_obj.isOpen():
                 return self.device_obj.isReadable()
         except Exception as e:
-            print(f"ERROR   : {self} try to detect device is readable")
+            logging.error(f"ERROR   : {self} try to detect device is readable")
 
     """ 从设备读取数据       """
     def read(self, file_path):
@@ -132,20 +135,19 @@ class mDeviceList(object):
     def size(self):
         return len(self.dev_list)
 
-    """ 添加设备                    """
+    """ 添加设备                   """
     def add(self, dev: mDevice):
         self.dev_list.append(dev)
 
-    """ TODO 查询指定设备           """
-    def query(self, dev: mDevice):
-        pass
+    """ 查询指定设备                """
+    def query(self, dev_id: int):
+        for dev in self.dev_list:
+            if dev.device_id == dev_id:
+                return dev
+        return None
 
     """ TODO 删除指定设备           """
-    def delete(self, ddev: mDevice):
-        pass
-
-    """ TODO 更新所有设备的HELLO    """
-    def update(self):
+    def delete(self, dev: mDevice):
         pass
 
     """ 关闭所有设备                """
@@ -154,25 +156,12 @@ class mDeviceList(object):
             for dev in self.dev_list:
                 dev.close()
         except Exception as e:
-            logging.error("ERROR   : Close Device List ", e)
+            logging.error(f"ERROR   : Close Device List {e}")
         finally:
             del self.dev_list
 
 
-""" 从配置文件中加载设备信息    """
-def load_device_from_config_file(file_name):
-    dev_list = []
-    with open(file_name, "r", encoding="utf-8") as f:
-        while True:
-            rdata = f.readline().replace("\n","")
-            if rdata:
-                if not "#" in rdata:
-                    param1, param2, param3, param4, param5, param6 = rdata.replace(" ","").split(",")
-                    dev_list.append(mDevice(device_id=param1, device=param2, identify=param3, type=conv_from_str_to_enum(mDevcieTypeEnum, param4), storage_filepath=param5, description=param6))
-            else:
-                break
-    return dev_list
-
+""" 从数据库中加载设备信息    """
 def load_device_from_db():
     dev_list = []
     

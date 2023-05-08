@@ -1,8 +1,16 @@
-import os, sys, time
-from driver.mserial    import *
+'''
+Author: liuyibo 1299502716@qq.com
+Date: 2023-05-08 15:50:48
+LastEditors: liuyibo 1299502716@qq.com
+LastEditTime: 2023-05-08 15:51:00
+FilePath: \Gateway_System\control\src\driver\bsp_satellite_comm.py
+Description: 天通通信驱动文件
+'''
+
+from .mserial    import *
 
 
-class mSatelliteDevice(object):
+class mSatelliteCommDevice(object):
     """_summary_
     achieve satellite communication device, wihch is a serial device and based on AT command
     Args:

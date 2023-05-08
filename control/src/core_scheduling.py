@@ -19,20 +19,37 @@ mdealprocesspool = ThreadPoolExecutor(10)                   # thread pool
 ###################################### manage device list     ###################################
 ###################################### manage device list     ###################################
 """ 子线程：打开设备        """
-def open_device_threadhandle(device: mDevice):
+def open_device_threadhandle(dev: mDevice):
     try:
-        device.open()
+        dev.open()
     except Exception as e:
-        logging.error("ERROR   : Open Device", device._device)
+        logging.error(f"ERROR   : Open Device {dev}")
     finally:
-        return device
+        return dev
+
+""" 函数：修改数据库中设备信息   """
+def modify_device_info_in_db():
+    try:
+        for dev in mdevicelist.dev_list:
+            try:
+                if modify_device := session.query(Device_Model).filter_by(device_id=dev.device_id).first():
+                    if dev.is_Open:
+                        modify_device.device_status     = 1
+                        modify_device.last_work_time    = get_current_time()
+                    else:
+                        modify_device.device_status     = 0
+                else:
+                    raise
+            except Exception as e:
+                logging.error(f"未在数据库中找到{dev}信息, 错误原因{e}")
+    except Exception as e:
+        logging.error(f"修改设备信息对应的数据库信息, 错误原因{e}")
+    finally:
+        # 提交数据库修改
+        session.commit()
 
 """ 线程：初始化设备列表        """
-def init_device_list_threadhandle(file_name):
-    global mdevicelist
-
-    # # load device from "./config/device.conf"
-    # dev_list = load_device_from_config_file(file_name)
+def init_device_list_threadhandle():
     # load device from db
     dev_list = load_device_from_db()
     
@@ -47,9 +64,11 @@ def init_device_list_threadhandle(file_name):
 
     # append device to device_list
     for tt in tt_list:
-        mdevicelist.add(tt.result())
+        if tt.result():
+            mdevicelist.add(tt.result())
     
-    logging.info(f"设备列表中存在{mdevicelist.size()}个设备, 设备0={mdevicelist.dev_list[0]}")
+    logging.critical(f"完成设备列表初始化，存在{mdevicelist.size()}个设备")
+    modify_device_info_in_db()
         
 """ 多线程：监控设备数据IO      """
 def monitor_device_threadhandle(dev: mDevice):
@@ -62,7 +81,7 @@ def monitor_device_threadhandle(dev: mDevice):
             # 创建数据库记录
             add_task                    = Task_Model()
             add_task.target_device_id   = dev.device_id
-            add_task.target_device_name = dev.identify
+            add_task.target_device_name = dev.device_name
             add_task.source_file_path   = task_file_path
             add_task.task_name          = task_name
             add_task.task_priority      = "0"
@@ -165,9 +184,6 @@ def deal_data_forwarding_callback(res):
 
 """ 线程：监控任务队列      """
 def monitor_task_queue_threadhandle():
-    global mtaskqueue
-    global mdealprocesspool
-
     while True:
         # block wait task from task queue
         submit_task = mtaskqueue.get()
@@ -180,7 +196,6 @@ def monitor_task_queue_threadhandle():
         
 ###################################### deal web task        ######################################
 ###################################### deal web task        ######################################
-
 """ 回调函数：处理来自web的任务     """
 def deal_web_task_request_callback(ch, method, properties, body):
     # 解析来自web服务器的任务请求
@@ -193,11 +208,12 @@ def deal_web_task_request_callback(ch, method, properties, body):
     priority    = mTaskPriorityEnum[web_task.get("priority")]
 
     # TODO 搜索设备
-    if  device_id==1:
-        device = mdevicelist.dev_list[0]
-
-    # 创建任务并发布任务
-    mtaskqueue.put(mTask(task_id, file_name, file_path, device, direct, priority))
+    device = mdevicelist.query(device_id)
+    if device:
+        # 创建任务并发布任务
+        mtaskqueue.put(mTask(task_id, file_name, file_path, device, direct, priority))
+    else:
+        logging.error(f"ERROR   : 未查询到web请求对应的设备{device_id}")
 
 """ 线程：监控web pika任务队列      """
 def monitor_web_task_threadhandle():
@@ -218,7 +234,7 @@ def monitor_web_task_threadhandle():
         on_message_callback=deal_web_task_request_callback,   
         auto_ack=True)    
     
-    logging.critical('SUCCESS : Create Pika server.')
+    logging.warning('SUCCESS : Create Pika server.')
     
     # 6. 开始循环等待，一直处于等待接收消息的状态
     channel.start_consuming()
@@ -229,7 +245,7 @@ def monitor_web_task_threadhandle():
 def test_for_core_scheduling():
     """ 初始化设备列表和任务队列          """
     # create threading : init device list
-    t1 = threading.Thread(target=init_device_list_threadhandle  , name="init device list" , args=("control/config/device.conf", ))
+    t1 = threading.Thread(target=init_device_list_threadhandle  , name="init device list" , args=())
     t1.start()
     t1.join()
     
