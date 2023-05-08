@@ -35,9 +35,9 @@ if __name__ == "__main__":
     proc_control = Process(target=create_control, args=())
     proc_control.start()
     
-    # # # 创建web进程
-    # proc_web = Process(target=create_web, args=())
-    # proc_web.start()
+    # # # 创建测试web服务器进程
+    proc_web = Process(target=create_web, args=())
+    proc_web.start()
     
     proc_control.join()
-    # proc_web.join()
+    proc_web.join()

@@ -6,15 +6,15 @@ import threading
 from .driver.bsp_underwater_acoustic_comm import mUnderwaterAscousticCommDevice
 
 # from driver.msatellite import *
-from .tool.mlocaltime import *
-from .tool.mformatconv import *
+from .tool.mlocaltime   import *
+from .tool.mformatconv  import *
+from .models.model      import *
 
+""" devcie type enum    """
 class mDevcieTypeEnum(Enum):
-    """ devcie type enum    """
-    TYPE_ELSE     = 1
-    TYPE_SERIAL   = 2
-    TYPE_ETHERNET = 3
-    TYPE_FILE     = 4
+    TYPE_ELSE     = "else"
+    TYPE_SERIAL   = "serial"
+    TYPE_ETHERNET = "ethernet"
 
 """_summary_
 achieve device class
@@ -28,13 +28,18 @@ Args:
 class mDevice(object):
     
     """ init param and create device object  """
-    def __init__(self, device_id: int, device: str, identify: str, type: mDevcieTypeEnum, storage_filepath: str, description=""):
-        self.device_id         = device_id
-        self.device            = device
-        self.identify          = identify
-        self.type              = type
-        self.storage_filepath  = storage_filepath
-        self.description       = description
+    def __init__(self, device_id: int, device_name: str, device_type: str, device_status: int, device_property: str, device_description: str):
+        self.device_id          = device_id
+        self.device_name        = device_name
+        self.device_type        = device_type
+        self.device_status      = device_status
+        self.device_property    = device_property
+        self.device_description = device_description
+        
+        # 解析device_property属性字段
+
+        self.storage_filepath   = storage_filepath
+
 
         # init device obj according to identify
         self.device_obj        = None
@@ -168,35 +173,12 @@ def load_device_from_config_file(file_name):
                 break
     return dev_list
 
-
-def test_for_device_manager():
-
-    dev_list = load_device_from_config_file("config/device.conf")
+def load_device_from_db():
+    dev_list = []
     
-    t1 = threading.Thread(target=scom_transfile, args=(dev_list[0], ))
-    t2 = threading.Thread(target=scom_recefile , args=(dev_list[1], ))
-    
-    t1.start()
-    t2.start()
-    
-    t1.join()
-    t2.join()
+    # 查询数据库
+    devices_db = session.query(Device_Model).all()
+    for dev in devices_db:
+        dev_list.append(mDevice(dev.device_id, dev.device_name, dev.device_type, dev.device_status, dev.device_property, dev.device_description))
 
-def scom_transfile(dev):
-    dev.open()
-
-    while True:
-        dev.write(file_path='storage/device/acoustic/', file_name='license')
-        time.sleep(30)
-    dev.close()
-
-def scom_recefile(dev):
-    dev.open()
-    while True:
-        if read_file_name:= dev.read():
-            print("read file name = ", read_file_name)
-        time.sleep(0.1)
-    dev.close()
-    
-if __name__ == "__main__":
-    test_for_device_manager()
+    return dev_list

@@ -4,18 +4,17 @@ import multiprocessing
 import pika
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
 
+
 from .utils.get_time import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
-
-
 from .device_manager     import *
 from .task_queue         import *
+from .models.model       import *
 
 # ! 设备列表、任务队列、处理池的定义
 mdevicelist      = mDeviceList()                            # device list
 mtaskqueue       = mTaskQueue(maxsize=10, timeout=3)        # task queue
 # mdealprocesspool = ProcessPoolExecutor(10)                  # process pool
 mdealprocesspool = ThreadPoolExecutor(10)                   # thread pool
-
 
 ###################################### manage device list     ###################################
 ###################################### manage device list     ###################################
@@ -32,8 +31,10 @@ def open_device_threadhandle(device: mDevice):
 def init_device_list_threadhandle(file_name):
     global mdevicelist
 
-    # load device from "./config/device.conf"
-    dev_list = load_device_from_config_file(file_name)
+    # # load device from "./config/device.conf"
+    # dev_list = load_device_from_config_file(file_name)
+    # load device from db
+    dev_list = load_device_from_db()
     
     tt_pool = ThreadPoolExecutor(10)
     tt_list = []
@@ -59,7 +60,7 @@ def monitor_device_threadhandle(dev: mDevice):
             task_name                   = f"task device{dev.device_id}-file{get_current_time_apply_to_filename()}"
             
             # 创建数据库记录
-            add_task                    = Tasks()
+            add_task                    = Task_Model()
             add_task.target_device_id   = dev.device_id
             add_task.target_device_name = dev.identify
             add_task.source_file_path   = task_file_path
@@ -138,7 +139,7 @@ def deal_data_forwarding_callback(res):
 
     # 将任务处理结果（时间、任务状态）写入数据库
     try:
-        modify_task = session.query(Tasks).filter_by(task_id=task_id).first()
+        modify_task = session.query(Task_Model).filter_by(task_id=task_id).first()
         if modify_task:
             if task_flag == "success":
                 modify_task.task_status         = "success"
