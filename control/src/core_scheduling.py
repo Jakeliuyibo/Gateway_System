@@ -52,7 +52,7 @@ def modify_device_info_in_db():
 def init_device_list_threadhandle():
     # load device from db
     dev_list = load_device_from_db()
-    
+
     tt_pool = ThreadPoolExecutor(10)
     tt_list = []
     for dev in dev_list:
@@ -66,10 +66,10 @@ def init_device_list_threadhandle():
     for tt in tt_list:
         if tt.result():
             mdevicelist.add(tt.result())
-    
+
     logging.critical(f"完成设备列表初始化，存在{mdevicelist.size()}个设备")
     modify_device_info_in_db()
-        
+
 """ 多线程：监控设备数据IO      """
 def monitor_device_threadhandle(dev: mDevice):
     while dev.is_Open:
@@ -174,11 +174,11 @@ def deal_data_forwarding_callback(res):
             else:
                 modify_task.task_status             = "fail"
                 logging.critical("线程池回调 ： 执行任务{task_id}失败")
-            
+
             # 提交数据库修改
             session.commit()
         else:
-            raise        
+            raise
     except Exception as e:
         logging.error(f"线程池处理任务{task_id}回调出现错误, 错误原因{e}")
 
@@ -193,7 +193,7 @@ def monitor_task_queue_threadhandle():
 
         # set callback function
         fur.add_done_callback(deal_data_forwarding_callback)
-        
+
 ###################################### deal web task        ######################################
 ###################################### deal web task        ######################################
 """ 回调函数：处理来自web的任务     """
@@ -238,7 +238,7 @@ def monitor_web_task_threadhandle():
     
     # 6. 开始循环等待，一直处于等待接收消息的状态
     channel.start_consuming()
-    
+
 ###################################### core scheduling      ######################################
 ###################################### core scheduling      ######################################
 
@@ -248,7 +248,7 @@ def test_for_core_scheduling():
     t1 = threading.Thread(target=init_device_list_threadhandle  , name="init device list" , args=())
     t1.start()
     t1.join()
-    
+
     # create threading : manage task queue
     t2 = threading.Thread(target=monitor_task_queue_threadhandle, name="manage task queue", args=())
     t2.start()
@@ -265,7 +265,7 @@ def test_for_core_scheduling():
         tt = threading.Thread(target=monitor_device_threadhandle     , name="monitor device list"    , args=(dev, ))
         tt.start()
         tt_list.append(tt)
-    
+
     for tt in tt_list:
         tt.join()
 

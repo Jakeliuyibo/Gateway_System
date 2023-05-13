@@ -36,9 +36,9 @@ def create_app(config_name):
     if config_obj.LOGGING_CONFIG_ABLE:
         mloger = logs_init(config_obj)
         app.logger.addHandler(mloger)
-    
+
     logging.critical(f"数据库地址{config_obj.SQLALCHEMY_DATABASE_URI}")
-    
+
     # 关联数据库ROM和Flask对象
     db.init_app(app)
 

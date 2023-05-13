@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 19:06:57
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-03 16:41:45
+LastEditTime: 2023-05-11 20:14:05
 FilePath: \Gateway_Management_System\app\config.py
 Description: flask的默认配置
 '''
@@ -24,7 +24,7 @@ class Config(object):
     # 数据库配置
     # SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.getcwd() + "/db/gateway.db"
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + "Y:/Studyplace_Web_Development/Gateway_System" + "/db/gateway.db"
-    
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # redis配置，保存数据库地址、端口、session信息
@@ -45,7 +45,7 @@ class Config(object):
     LOGGING_STREAM_HANDLER_LEVEL = logging.WARNING                      # 设置logging终端输出等级
     LOGGING_FILE_FORMAT          = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s[line:%(lineno)d] - %(levelname)s: %(message)s')
     LOGGING_STREAM_FORMAT        = logging.Formatter('%(message)s')
-    
+
     # upload文件上传配置
     UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
 

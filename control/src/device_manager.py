@@ -35,9 +35,9 @@ class mDevice(object):
         self.device_status      = device_status
         self.device_property    = eval(device_property)
         self.device_description = device_description
-        
+
         # 解析device_property属性字段
-        self.device_interface   = self.device_property.get("interface") 
+        self.device_interface   = self.device_property.get("interface")
         self.storage_filepath   = self.device_property.get("storage_filepath")
 
         # init device obj according to identify
@@ -54,7 +54,7 @@ class mDevice(object):
 
     def __repr__(self):
         return '设备(%r)' % (self.device_description)
-    
+
     """ 打开设备            """
     def open(self):
         try:
