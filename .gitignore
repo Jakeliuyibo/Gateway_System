@@ -1,4 +1,2 @@
 *.py[cod]
 *.code-workspace
-# logs/*
-# storage/*

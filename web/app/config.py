@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 19:06:57
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-11 20:14:05
+LastEditTime: 2023-05-14 22:31:58
 FilePath: \Gateway_Management_System\app\config.py
 Description: flask的默认配置
 '''
@@ -13,6 +13,8 @@ import logging
 from datetime import timedelta
 from redis import StrictRedis
 from .utils.get_time import get_current_time_apply_to_filename
+import platform
+
 
 '''
 description: 基础配置类
@@ -21,10 +23,22 @@ class Config(object):
     # 调试模式配置
     DEBUG = True
 
-    # 数据库配置
-    # SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.getcwd() + "/db/gateway.db"
-    SQLALCHEMY_DATABASE_URI = "sqlite:///" + "Y:/Studyplace_Web_Development/Gateway_System" + "/db/gateway.db"
+    # 操作系统
+    OS_SYSTEM = platform.system()
+    if OS_SYSTEM == 'Windows':
+        # 数据库配置
+        SQLALCHEMY_DATABASE_URI      = "sqlite:///" + "Y:/Studyplace_Web_Development/Gateway_System" + "/db/gateway.db"
+        LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
+        # upload文件上传配置
+        UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
 
+    else:    # ! Linux
+        SQLALCHEMY_DATABASE_URI      = f"sqlite:///{os.getcwd()}/db/gateway.db"
+        LOGGING_FILE_PATH            = f'logs/web/{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
+        # upload文件上传配置
+        UPLOAD_FILE_STORAGE_PATH     = "storage/upload/" # 设置上传文件存储路径
+
+    # 数据库配置
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # redis配置，保存数据库地址、端口、session信息
@@ -40,14 +54,11 @@ class Config(object):
 
     # logging配置
     LOGGING_CONFIG_ABLE          = True
-    LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
     LOGGING_FILE_HANDLER_LEVEL   = logging.INFO                         # 设置logging文件输出等级
     LOGGING_STREAM_HANDLER_LEVEL = logging.WARNING                      # 设置logging终端输出等级
     LOGGING_FILE_FORMAT          = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s[line:%(lineno)d] - %(levelname)s: %(message)s')
     LOGGING_STREAM_FORMAT        = logging.Formatter('%(message)s')
 
-    # upload文件上传配置
-    UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
 
     # 项目版本
     PROJECT_VERSION              = "V1.1"
