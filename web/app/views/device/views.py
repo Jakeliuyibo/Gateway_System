@@ -8,11 +8,10 @@ LastEditTime: 2023-05-15 10:22:58
 FilePath: \Gateway_Management_System\app\views\device\views.py
 Description: 注册device模块的view视图
 '''
-import logging
 import os
-import threading
+import logging
+import pika
 from flask import current_app, jsonify, render_template, request, make_response, redirect, url_for, session, json
-
 from . import *
 from ... import db, redis_store
 from ...public import amis_ret
@@ -20,8 +19,6 @@ from ...utils.get_time import get_current_time, transfer_format_from_date_to_dat
 from ...config import Config
 from ...models.models import User, Device, Uploadfiles, Tasks
 from sqlalchemy.sql import and_
-from werkzeug.utils import secure_filename
-import pika
 
 # """"""""""""""""""""""""""""""""""   页面操作   """"""""""""""""""""""""""""""""""
 # """"""""""""""""""""""""""""""""""   页面操作   """"""""""""""""""""""""""""""""""
@@ -222,21 +219,22 @@ def receive_file_from_web():
 def delete_uploadfile(file_id):
     try:
         delete_file = db.session.query(Uploadfiles).filter_by(file_id=file_id)
-        delete_file_path = delete_file.first().file_local_storage_path
+        delete_file_first = delete_file.first()
+        delete_file_name  = delete_file_first.file_local_storage_path + delete_file_first.file_name
 
         # delete record in db
         delete_file.delete()
         db.session.commit()
 
         # delete file
-        if os.path.exists(delete_file_path):
-            os.remove(delete_file_path)
+        if os.path.exists(delete_file_name):
+            os.remove(delete_file_name)
 
-        logging.critical(f"删除已上传数据库的文件{file_id}成功")
+        logging.critical(f"删除已上传数据库的文件{delete_file_name}成功")
         return amis_ret(data={}, status=0, msg="删除文件成功")
 
     except Exception as e:
-        logging.error(f"SQL Error: try to delete file, fileid={file_id}, 错误原因{e}")
+        logging.error(f"SQL Error: try to delete file {delete_file_name}, 错误原因{e}")
         return amis_ret(data={}, status=-1, msg="删除文件失败")
 
 # """"""""""""""""""""""""""""""""""   任务操作：任务   """"""""""""""""""""""""""""""""""

@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 19:06:57
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-15 09:57:32
+LastEditTime: 2023-05-15 10:41:43
 FilePath: \Gateway_Management_System\app\config.py
 Description: flask的默认配置
 '''
@@ -15,7 +15,6 @@ from redis import StrictRedis
 from .utils.get_time import get_current_time_apply_to_filename
 import platform
 
-
 '''
 description: 基础配置类
 '''
@@ -25,14 +24,14 @@ class Config(object):
 
     # 操作系统
     OS_SYSTEM = platform.system()
-    if OS_SYSTEM == 'Windows':
+    if OS_SYSTEM == 'Windows':      # ! Windows
         # 数据库配置
         SQLALCHEMY_DATABASE_URI      = "sqlite:///" + "Y:/Studyplace_Web_Development/Gateway_System" + "/db/gateway.db"
         LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
         # upload文件上传配置
         UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
 
-    else:    # ! Linux
+    else:                           # ! Linux
         SQLALCHEMY_DATABASE_URI      = f"sqlite:///{os.getcwd()}/db/gateway.db"
         LOGGING_FILE_PATH            = f'logs/web/{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
         # upload文件上传配置
