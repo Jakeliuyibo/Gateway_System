@@ -7,7 +7,8 @@ LastEditTime: 2023-05-15 10:01:16
 FilePath: \Gateway_System\main.py
 Description: 主函数，通过python main.py启动网关软件
 '''
-
+# import sys
+# sys.path.insert(0, r"/home/nano/.local/lib/python3.8/site-packages")
 from multiprocessing import Process
 from web.app import create_app, run_test_server
 from control.src import init_device

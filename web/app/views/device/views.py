@@ -322,9 +322,9 @@ def add_device_task_to_db(device_id):
                         connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', '5672'))
                         channel = connection.channel()
                         channel.basic_publish(
-                            exchange='',                        # RabbitMQ中所有的消息都要先通过交换机，空字符串表示使用默认的交换机
-                            routing_key='web_task_queue',       # 指定消息要发送到哪个queue
-                            body=str(web_task))                 # 消息的内容
+                            exchange='',                                # RabbitMQ中所有的消息都要先通过交换机，空字符串表示使用默认的交换机
+                            routing_key=Config.PIKA_TASKQUEUE_NAME,     # 指定消息要发送到哪个queue
+                            body=str(web_task))                         # 消息的内容
                         logging.critical(f"向pika队列写入任务信息{task.task_id}成功")
                     except Exception as e:
                         logging.error(f"建立与控制软件的Pika RabbitMQ连接错误 {e}")

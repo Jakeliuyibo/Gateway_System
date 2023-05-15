@@ -2,10 +2,10 @@ import os, sys, time
 import threading
 import multiprocessing
 import pika
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
+from concurrent.futures  import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
 
-
-from .utils.get_time import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
+from .config             import Config
+from .utils.get_time     import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
 from .device_manager     import *
 from .task_queue         import *
 from .models.model       import *
@@ -129,22 +129,24 @@ def deal_data_forwarding_processhandle(args):
             return     {"task_id"       :task._task_id,
                         "flag"          :"fail",
                         "direct"        :"DIRECT_DEVICE_TO_FILE"}
-            
     elif task._direct == mTaskFlowDirectionEnum.DIRECT_FILE_TO_DEVICE:        # file to device
         try:
             execute_time    = get_current_time()
             file_size       = task._device.write(task._file_path, task._file_name)
-            finish_time     = get_current_time()
-            transfer_speed  = str(round(float(file_size) / float(cal_diff_time_between_date1_and_date2(execute_time, finish_time)),2))
+            if file_size != -1:
+                finish_time     = get_current_time()
+                transfer_speed  = str(round(float(file_size) / float(cal_diff_time_between_date1_and_date2(execute_time, finish_time)),2))
 
-            return {"task_id"       :task._task_id, 
-                    "flag"          :"success",
-                    "direct"        :"DIRECT_FILE_TO_DEVICE", 
-                    "execute_time"  :execute_time, 
-                    "finish_time"   :finish_time,
-                    "transfer_speed":transfer_speed}
+                return {"task_id"       :task._task_id,
+                        "flag"          :"success",
+                        "direct"        :"DIRECT_FILE_TO_DEVICE",
+                        "execute_time"  :execute_time,
+                        "finish_time"   :finish_time,
+                        "transfer_speed":transfer_speed}
+            else:
+                raise
         except Exception as e:
-            logging.error(f"ERROR   : 线程池处理DIRECT_FILE_TO_DEVICE任务{task._task_id}") 
+            logging.error(f"ERROR   : 线程池处理DIRECT_FILE_TO_DEVICE任务{task._task_id}")
             return {"task_id"       :task._task_id,
                     "flag"          :"fail",
                     "direct"        :"DIRECT_FILE_TO_DEVICE"}
@@ -225,12 +227,12 @@ def monitor_web_task_threadhandle():
     channel = connection.channel()
     
     # 3. 创建队列，queue_declare可以使用任意次数，
-    channel.queue_declare(queue='web_task_queue', durable=True)
+    channel.queue_declare(queue=Config.PIKA_TASKQUEUE_NAME, durable=True)
     
     # 4. 接收来自指定queue的消息
     # auto_ack指定为True，表示消息接收到后自动给消息发送方回复确认，已收到消息
     channel.basic_consume(
-        queue='web_task_queue',
+        queue=Config.PIKA_TASKQUEUE_NAME,
         on_message_callback=deal_web_task_request_callback,   
         auto_ack=True)    
     

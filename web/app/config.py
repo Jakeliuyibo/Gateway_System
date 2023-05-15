@@ -10,10 +10,10 @@ Description: flask的默认配置
 '''
 import os
 import logging
+import platform
 from datetime import timedelta
 from redis import StrictRedis
 from .utils.get_time import get_current_time_apply_to_filename
-import platform
 
 '''
 description: 基础配置类
@@ -30,12 +30,15 @@ class Config(object):
         LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
         # upload文件上传配置
         UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
-
+        # pika任务队列名称
+        PIKA_TASKQUEUE_NAME          = 'web_task_queue_for_windows'
     else:                           # ! Linux
         SQLALCHEMY_DATABASE_URI      = f"sqlite:///{os.getcwd()}/db/gateway.db"
         LOGGING_FILE_PATH            = f'logs/web/{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
         # upload文件上传配置
         UPLOAD_FILE_STORAGE_PATH     = "storage/upload/" # 设置上传文件存储路径
+        # pika任务队列名称
+        PIKA_TASKQUEUE_NAME          = 'web_task_queue_for_linux'
 
     # 数据库配置
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -53,7 +56,7 @@ class Config(object):
 
     # logging配置
     LOGGING_CONFIG_ABLE          = True
-    LOGGING_FILE_HANDLER_LEVEL   = logging.INFO                         # 设置logging文件输出等级
+    LOGGING_FILE_HANDLER_LEVEL   = logging.WARNING                      # 设置logging文件输出等级
     LOGGING_STREAM_HANDLER_LEVEL = logging.WARNING                      # 设置logging终端输出等级
     LOGGING_FILE_FORMAT          = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s[line:%(lineno)d] - %(levelname)s: %(message)s')
     LOGGING_STREAM_FORMAT        = logging.Formatter('%(message)s')
