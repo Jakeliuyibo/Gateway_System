@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 '''
-Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved 
+Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 20:32:38
 LastEditors: liuyibo 1299502716@qq.com
 LastEditTime: 2023-01-20 15:16:19
 FilePath: \Gateway_Management_System\app\views\login\__init__.py
-Description: 
+Description:
 '''
 from flask import Blueprint
 

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
-Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved 
+Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 19:06:57
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-14 22:31:58
+LastEditTime: 2023-05-15 09:57:32
 FilePath: \Gateway_Management_System\app\config.py
 Description: flask的默认配置
 '''
@@ -58,7 +58,6 @@ class Config(object):
     LOGGING_STREAM_HANDLER_LEVEL = logging.WARNING                      # 设置logging终端输出等级
     LOGGING_FILE_FORMAT          = logging.Formatter('%(asctime)s - %(filename)s:%(funcName)s[line:%(lineno)d] - %(levelname)s: %(message)s')
     LOGGING_STREAM_FORMAT        = logging.Formatter('%(message)s')
-
 
     # 项目版本
     PROJECT_VERSION              = "V1.1"

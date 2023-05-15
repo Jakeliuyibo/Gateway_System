@@ -3,7 +3,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-04-29 21:35:29
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-08 17:54:15
+LastEditTime: 2023-05-15 10:01:16
 FilePath: \Gateway_System\main.py
 Description: 主函数，通过python main.py启动网关软件
 '''
@@ -35,8 +35,8 @@ if __name__ == "__main__":
     proc_control.start()
 
     # # # # 创建测试web服务器进程
-    # proc_web = Process(target=create_web, args=())
-    # proc_web.start()
+    proc_web = Process(target=create_web, args=())
+    proc_web.start()
 
     proc_control.join()
-    # proc_web.join()
+    proc_web.join()

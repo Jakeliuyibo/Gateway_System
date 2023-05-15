@@ -17,10 +17,13 @@ from ...models.models import User, Device
 from sqlalchemy.sql import and_
 from ...config import Config
 
+
+'''
+description: 登陆操作：从URL中获得login.html输入的用户名和密码，校验数据库并设置cookie
+'''
 @login_blue.route("/")
 @login_blue.route("/index")
 def index():
-    """ 登陆操作：从URL中获得login.html输入的用户名和密码，校验数据库并设置cookie   """
     ret = request.args
     if ret:
         rqu_user_name = ret.get("Username")
@@ -29,7 +32,7 @@ def index():
         # 查询数据库中用户数据
         try:
             db.session.query(User).filter(and_(User.user_name == rqu_user_name, User.user_password == rqu_password)).one()
-        except:
+        except Exception as e:
             # 设置cookie，有效期 3600 sec
             session['login_flag'] = "fail"
             logging.error("未从数据库查找到用户信息")

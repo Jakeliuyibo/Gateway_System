@@ -1,0 +1,22 @@
+2023-05-15 10:01:22,989 - __init__.py:create_app[line:40] - CRITICAL: 数据库地址sqlite:///Y:/Studyplace_Web_Development/Gateway_System/db/gateway.db
+2023-05-15 10:01:23,028 - _internal.py:_log[line:113] - INFO:  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2023-05-15 10:01:29,718 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[32mGET / HTTP/1.1[0m" 302 -
+2023-05-15 10:01:29,854 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[37mGET /login/index HTTP/1.1[0m" 200 -
+2023-05-15 10:01:29,916 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[37mGET /static/login/css/style.css HTTP/1.1[0m" 200 -
+2023-05-15 10:01:29,939 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[37mGET /static/login/js/jquery-2.2.3.min.js HTTP/1.1[0m" 200 -
+2023-05-15 10:01:29,963 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[37mGET /static/login/images/background.jpg HTTP/1.1[0m" 200 -
+2023-05-15 10:01:29,984 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:29] "[37mGET /static/login/images/favicon.ico HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,138 - views.py:index[line:28] - CRITICAL: 接收到用户root浏览器登录访问
+2023-05-15 10:01:31,143 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[32mGET /login/index?Username=root&Password=88888888 HTTP/1.1[0m" 302 -
+2023-05-15 10:01:31,198 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /device/index HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,248 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /static/device/amis/sdk.css HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,249 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /static/device/amis/helper.css HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,266 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /static/device/amis/iconfont.css HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,595 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /static/device/amis/sdk.js HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,912 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /static/device/amis/thirds/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 200 -
+2023-05-15 10:01:31,925 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:31] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-05-15 10:01:32,049 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-05-15 10:01:34,152 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:34] "[37mPUT /device/data_operation/1 HTTP/1.1[0m" 200 -
+2023-05-15 10:01:34,162 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:34] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
+2023-05-15 10:01:39,598 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:39] "[37mPUT /device/data_operation/2 HTTP/1.1[0m" 200 -
+2023-05-15 10:01:39,608 - _internal.py:_log[line:113] - INFO: 127.0.0.1 - - [15/May/2023 10:01:39] "[37mGET /device/data_operation?page=1&perPage=10 HTTP/1.1[0m" 200 -
