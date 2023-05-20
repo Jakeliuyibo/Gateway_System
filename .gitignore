@@ -2,3 +2,4 @@
 *.code-workspace
 logs/device/*.log
 logs/web/*.log
+storage/device/acoustic/*
