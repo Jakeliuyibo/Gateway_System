@@ -24,10 +24,10 @@
 ## Directory structure:
 - Gateway System
   - control  : device communication module driver file
-- db       : database
-- logs     : log files
-- storage  : received files and uploaded files
-- web      : web applicaton based on Flask
+  - db       : database
+  - logs     : log files
+  - storage  : received files and uploaded files
+  - web      : web applicaton based on Flask
 
 ![登录界面](https://user-images.githubusercontent.com/49876032/221079815-56105437-96dd-438b-af9a-f8976a88845f.png)
 ![首页-设备管理](https://user-images.githubusercontent.com/49876032/221079991-d540db54-d292-4b63-830e-0c300b10fccb.png)
