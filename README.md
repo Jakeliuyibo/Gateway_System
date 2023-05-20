@@ -1,5 +1,5 @@
                                                    Gateway System接收到一帧数据
-* * *
+---------------------------------------
 Brief:
     The gateway system consists of two intergrated software, one is control software, the other is management software.
 
@@ -15,12 +15,12 @@ Brief:
 
     To communicate between the two separate processes, the control and management software, we use the RabbitMQ-based
     pika module, which uses message queues to exchange data.
-* * *
+---------------------------------------
 Usage method:
     Install pyhton, flask, redis, sqlite, pika, related to environment (pip install -r requirements.txt), and then
     use the terminal to run the main program (python main.py), use the browser to access 127.0.0.1 + port number,
     you can access to the local Web!
-* * *
+---------------------------------------
 Directory structure:                                      \
     * Gateway System                                      \
     ** control  : device communication module driver file \
@@ -28,7 +28,7 @@ Directory structure:                                      \
     ** logs     : log files                               \
     ** storage  : received files and uploaded files       \
     ** web      : web applicaton                          \
-* * *
+---------------------------------------
 ![登录界面](https://user-images.githubusercontent.com/49876032/221079815-56105437-96dd-438b-af9a-f8976a88845f.png)
 ![首页-设备管理](https://user-images.githubusercontent.com/49876032/221079991-d540db54-d292-4b63-830e-0c300b10fccb.png)
 ![首页-设备管理2](https://user-images.githubusercontent.com/49876032/221080008-5112f2d2-e018-4379-98cb-62d93d12949d.png)
