@@ -1,4 +1,4 @@
-                                                   # Gateway System
+## Gateway System
 
 Brief:
     The gateway system consists of two intergrated software, one is control software, the other is management software.
