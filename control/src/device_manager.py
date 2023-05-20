@@ -5,8 +5,7 @@ from enum import Enum
 import threading
 from .driver.bsp_underwater_acoustic_comm   import mUnderwaterAscousticCommDevice
 from .driver.bsp_satellite_comm             import mSatelliteCommDevice
-
-# from driver.msatellite import *
+from .driver.bsp_optical_fiber_comm         import mOpticalFiberCommDevice
 from .tool.mlocaltime   import *
 from .tool.mformatconv  import *
 from .models.model      import *
@@ -44,10 +43,12 @@ class mDevice(object):
         self.device_obj        = None
         self.is_Open           = False
         self._wlock            = threading.Lock()               # device write lock
-        if self.device_name    == "satellite comm module":
+        if self.device_name    == "satellite comm module":                          # 天通通信设备
             self.device_obj = mSatelliteCommDevice(self.device_interface)
-        elif self.device_name  == "underwater acoustic comm module":
+        elif self.device_name  == "underwater acoustic comm module":                # 水声通信设备
             self.device_obj = mUnderwaterAscousticCommDevice(self.device_interface)
+        # elif self.device_name == "optical fiber comm module":                       # 光纤通信设备
+        #     self.device_obj = mOpticalFiberCommDevice(self.device_interface)
         else:
             # TODO 添加设备
             pass
@@ -72,7 +73,7 @@ class mDevice(object):
         try:
             if not self.device_obj:
                 raise
-    
+
             self.device_obj.close()
             self.device_obj = None
             self.is_Open    = False
