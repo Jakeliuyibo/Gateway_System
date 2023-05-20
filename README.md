@@ -23,7 +23,7 @@
 
 ## Directory structure:
 - Gateway System
-- control  : device communication module driver file
+  - control  : device communication module driver file
 - db       : database
 - logs     : log files
 - storage  : received files and uploaded files
