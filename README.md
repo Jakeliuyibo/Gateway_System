@@ -1,6 +1,6 @@
-## Gateway System
+# Gateway System
 
-Brief:
+## Brief:
     The gateway system consists of two intergrated software, one is control software, the other is management software.
 
     The control software is based on multi-threading for data access to the device, the device mainly include serial
@@ -16,12 +16,12 @@ Brief:
     To communicate between the two separate processes, the control and management software, we use the RabbitMQ-based
     pika module, which uses message queues to exchange data.
 
-Usage method:
+## Usage method:
     Install pyhton, flask, redis, sqlite, pika, related to environment (pip install -r requirements.txt), and then
     use the terminal to run the main program (python main.py), use the browser to access 127.0.0.1 + port number,
     you can access to the local Web!
 
-Directory structure:                                      \
+## Directory structure:
     * Gateway System                                      \
     ** control  : device communication module driver file \
     ** db       : database                                \
