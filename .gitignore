@@ -3,3 +3,4 @@
 logs/device/*.log
 logs/web/*.log
 storage/device/acoustic/*
+storage/device/optical/*

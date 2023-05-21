@@ -47,8 +47,10 @@ class mDevice(object):
             self.device_obj = mSatelliteCommDevice(self.device_interface)
         elif self.device_name  == "underwater acoustic comm module":                # 水声通信设备
             self.device_obj = mUnderwaterAscousticCommDevice(self.device_interface)
-        # elif self.device_name == "optical fiber comm module":                       # 光纤通信设备
-        #     self.device_obj = mOpticalFiberCommDevice(self.device_interface)
+        elif self.device_name == "optical fiber comm module":                       # 光纤通信设备
+            local_ip , local_port  = self.device_interface.split(':')
+            target_ip, target_port = self.device_property.get("target_interface").split(':')
+            self.device_obj = mOpticalFiberCommDevice(local_ip , int(local_port), target_ip, int(target_port))
         else:
             # TODO 添加设备
             pass
@@ -63,9 +65,9 @@ class mDevice(object):
             if not self.device_obj.isOpen():
                 raise
             self.is_Open       = True
-            logging.critical(f"SUCCESS : open device {self}")
+            logging.critical(f"成功打开{self}")
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to open device")
+            logging.error(f"失败打开{self}")
             self.device_obj = None
 
     """ 关闭设备            """
@@ -98,7 +100,7 @@ class mDevice(object):
 
     """ 检测设备是否可读     """
     def isReadable(self):
-        try: 
+        try:
             if self.is_Open and self.device_obj.isOpen():
                 return self.device_obj.isReadable()
         except Exception as e:
@@ -128,7 +130,7 @@ class mDeviceList(object):
     def __init__(self):
         # create device list
         self.dev_list = []
-    
+
     def __repr__(self):
         return f"设备列表{self.size()}"
 
@@ -165,7 +167,7 @@ class mDeviceList(object):
 """ 从数据库中加载设备信息    """
 def load_device_from_db():
     dev_list = []
-    
+
     # 查询数据库
     devices_db = session.query(Device_Model).all()
     for dev in devices_db:

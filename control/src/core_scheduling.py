@@ -77,7 +77,7 @@ def monitor_device_threadhandle(dev: mDevice):
             task_file_path              = dev.storage_filepath
             task_submit_time            = get_current_time()
             task_name                   = f"task device{dev.device_id}-file{get_current_time_apply_to_filename()}"
-            
+
             # 创建数据库记录
             add_task                    = Task_Model()
             add_task.target_device_id   = dev.device_id
@@ -90,11 +90,11 @@ def monitor_device_threadhandle(dev: mDevice):
             add_task.task_submit_source = "recv"
             session.add(add_task)
             session.commit()
-            
+
             # 提交任务
-            mtaskqueue.put(mTask(add_task.task_id, "", task_file_path, 
-                                    dev, 
-                                    mTaskFlowDirectionEnum.DIRECT_DEVICE_TO_FILE, 
+            mtaskqueue.put(mTask(add_task.task_id, "", task_file_path,
+                                    dev,
+                                    mTaskFlowDirectionEnum.DIRECT_DEVICE_TO_FILE,
                                     mTaskPriorityEnum.PRIOR_LOW))
         time.sleep(1)
 
@@ -104,7 +104,7 @@ def monitor_device_threadhandle(dev: mDevice):
 def deal_data_forwarding_processhandle(args):
     # 处理参数
     task = args[0]
-    
+
     # 处理任务
     if task._direct == mTaskFlowDirectionEnum.DIRECT_DEVICE_TO_FILE:          # device to file
         try:
@@ -114,12 +114,12 @@ def deal_data_forwarding_processhandle(args):
                 finish_time     = get_current_time()
                 file_size       = str(os.path.getsize(task._file_path+file_name))
                 transfer_speed  = str(round(float(file_size) / float(cal_diff_time_between_date1_and_date2(execute_time, finish_time)),2))
-                return {"task_id"       :task._task_id, 
-                        "flag"          :"success", 
+                return {"task_id"       :task._task_id,
+                        "flag"          :"success",
                         "direct"        :"DIRECT_DEVICE_TO_FILE",
                         "file_name"     :file_name,
                         "file_size"     :file_size,
-                        "execute_time"  :execute_time, 
+                        "execute_time"  :execute_time,
                         "finish_time"   :finish_time,
                         "transfer_speed":transfer_speed}
             else:
@@ -170,12 +170,12 @@ def deal_data_forwarding_callback(res):
                 if task_direct == "DIRECT_DEVICE_TO_FILE":
                     modify_task.source_file_name    = task.get('file_name')
                     modify_task.source_file_size    = task.get('file_size')
-                    logging.critical("线程池回调 ： 完成DIRECT_DEVICE_TO_FILE任务{task_id}")
+                    logging.critical(f"线程池回调 ： 完成DIRECT_DEVICE_TO_FILE任务{task_id}")
                 else:
-                    logging.critical("线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务{task_id}")
+                    logging.critical(f"线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务{task_id}")
             else:
                 modify_task.task_status             = "fail"
-                logging.critical("线程池回调 ： 执行任务{task_id}失败")
+                logging.critical(f"线程池回调 ： 执行任务{task_id}失败")
 
             # 提交数据库修改
             session.commit()
@@ -222,22 +222,22 @@ def monitor_web_task_threadhandle():
     """ 创建RabbitMQ的消费者队列    """
     # 1. 创建RabbitMQ server的连接
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', '5672'))
-    
+
     # 2. 创建一个channel
     channel = connection.channel()
-    
+
     # 3. 创建队列，queue_declare可以使用任意次数，
     channel.queue_declare(queue=Config.PIKA_TASKQUEUE_NAME, durable=True)
-    
+
     # 4. 接收来自指定queue的消息
     # auto_ack指定为True，表示消息接收到后自动给消息发送方回复确认，已收到消息
     channel.basic_consume(
         queue=Config.PIKA_TASKQUEUE_NAME,
-        on_message_callback=deal_web_task_request_callback,   
-        auto_ack=True)    
-    
+        on_message_callback=deal_web_task_request_callback,
+        auto_ack=True)
+
     logging.warning('SUCCESS : Create Pika server.')
-    
+
     # 6. 开始循环等待，一直处于等待接收消息的状态
     channel.start_consuming()
 
