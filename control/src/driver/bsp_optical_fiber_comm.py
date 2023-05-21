@@ -2,7 +2,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-05-20 12:49:17
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-20 15:09:38
+LastEditTime: 2023-05-21 19:02:52
 FilePath: \Gateway_System\control\src\driver\bsp_optical_fiber_comm.py
 Description: 光纤通信驱动文件,基于asyncore异步封装的socket
 '''
@@ -10,134 +10,138 @@ import os
 import socket
 import logging
 import threading
-import asyncore
 import struct
-
+from ..utils.get_time import get_current_time_apply_to_filename
+from .msocket import *
 
 '''
 description: 实现了光纤通信驱动
 '''
-class mOpticalFiberCommDevice(asyncore.dispatcher):
+class mOpticalFiberCommDevice():
     """ init device   """
-    def __init__(self, server_interface, target_interface):
+    def __init__(self, local_ip , local_port, target_ip, target_port):
         # parse parameters
-        server_interface        = server_interface.split(':')
-        self.tcpserver_ip       = server_interface[0]               # 服务器IP地址
-        self.tcpserver_port     = server_interface[1]               # 服务器端口号
-
-        target_interface        = target_interface.split(':')
-        self.tcpclient_ip       = target_interface[0]               # 目的服务器IP地址
-        self.tcpclient_port     = target_interface[1]               # 目的服务器端口号
+        self.local_ip       = local_ip              # 本地服务器IP地址
+        self.local_port     = local_port            # 本地服务器端口号
+        self.target_ip      = target_ip             # 目的服务器IP地址
+        self.target_port    = target_port           # 目的服务器端口号
 
         # init defconfig
-        self.tcpserver_obj      = None
+        self.localserver_obj    = None
+        self.recv_buf           = b''               # 读取缓存
         self.is_open            = False
 
     def __repr__(self):
-        return '光纤通信机(端口%r 状态%r)' % (self.server_ip, self.is_open)
+        return '光纤通信机(接口%r:%r 状态%r)' % (self.local_ip, self.local_port, self.is_open)
 
-    """ 打开设备         """
+    """ 检测设备是否在线  """
+    def isOpen(self):
+        return self.is_open
+
+    """ 打开设备    """
     def open(self):
         try:
-            if not detectHostIPIsExisted(self.tcpserver_ip):
+            if not detectHostIPIsExisted(self.local_ip):
                 raise
 
-            # 初始化TCP Server Socket
-            asyncore.dispatcher.__init__(self)
-            self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.bind((self.tcpserver_ip, self.tcpserver_port))
-
-            self.is_open  = True
+            # 初始化本地服务器
+            self.localserver_obj    = TcpServer(self.local_ip, self.local_port)
+            self.is_open            = True
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to open failed")
+            logging.error(f"ERROR   : {self} try to open failed, {e}")
 
-    """ 关闭设备         """
+    """ 关闭设备    """
     def close(self):
         try:
-            self.close()
+            self.localserver_obj.close()
+            self.is_open            = False
         except Exception as e:
             logging.error(f"ERROR   : {self} try to close device")
 
-    """ 写入文件             """
-    def write(self, file_path, file_name):
-        
-        # 1、向客户端连接TCP连接
-        
-        # 2、传输文件名+文件大小
-        file_size = str(os.path.getsize(file_path+file_name))
-        
-        # 3、传输文件数据
-        
-        # 4、断开连接
-        pass
+    """ 检测tcp服务器是否有数据可读 """
+    def isReadable(self):
+        return self.localserver_obj.readable() and len(self.recv_buf)==0
 
-    """ 读取文件             """
+    """ 从设备读取文件             """
     def read(self, file_path):
-        # 1、检测client_list是否为空
-        
-        # 2、检测是否有数据可读
-        
-        # 3、接收文件名+文件大小
-        
-        # 4、接收文件数据
-        pass
+        try:
+            if not self.isReadable():
+                raise
 
+            try:
+                # 读取数据并存入缓存
+                data = self.localserver_obj.read_from_buf()
+                if data:
+                    self.recv_buf += data
 
-    """ 子线程：监听客户端连接  """
-    def listen_client(self):
-        while True:
-            client_sk, client_addr = self.tcpserver_obj.accept()
-            self.client_list.append({client_sk, client_addr})
+                    if len(self.recv_buf) < 32+8:
+                        logging.error(f"{self}读取数据长度不足32+8")
+                        return None
+                    else:
+                        # 解析文件名+文件大小
+                        file_name, file_size = struct.unpack('32sQ', self.recv_buf[:32+8])
+                        file_name = file_name.decode('utf-8').rstrip('\x00')
+                        # 死循环读取直到长度大于等于file_size+32+8
+                        while len(self.recv_buf) < file_size + 32+8:
+                            data = self.localserver_obj.read_from_buf()
+                            if data:
+                                self.recv_buf += data
+                            time.sleep(1)
 
-# import asyncore
-# import struct
+                        # 解析文件数据
+                        file_data = self.recv_buf[32+8:32+8+file_size]
+                        # 删除缓存中的数据
+                        self.recv_buf = self.recv_buf[32+8+file_size:]
 
-# class TCPDevice(asyncore.dispatcher):
-#     def __init__(self, server_ip, server_port, target_ip, target_port):
-#         asyncore.dispatcher.__init__(self)
-#         self.create_socket()
-#         self.bind((server_ip, server_port))
-#         self.target_ip = target_ip
-#         self.target_port = target_port
-#         self.buffer = b''
-        
-#     def open(self):
-#         pass
-    
-#     def close(self):
-#         self.close()
-    
-#     def read(self):
-#         data = self.recv(1024)
-#         if data:
-#             file_info = struct.unpack('128sI', data[:132])
-#             filename = file_info[0].decode().strip('\x00')
-#             filesize = file_info[1]
-#             with open(filename, 'wb') as f:
-#                 f.write(data[132:])
-#                 remaining_bytes = filesize - len(data[132:])
-#                 while remaining_bytes > 0:
-#                     data = self.recv(1024)
-#                     f.write(data)
-#                     remaining_bytes -= len(data)
-    
-#     def write(self, filename):
-#         with open(filename, 'rb') as f:
-#             file_data = f.read()
-#             file_size = len(file_data)
-#             file_info = struct.pack('128sI', filename.encode(), file_size)
-#             self.buffer += file_info + file_data
-#             while len(self.buffer) > 0:
-#                 sent = self.sendto(self.buffer, (self.target_ip, self.target_port))
-#                 self.buffer = self.buffer[sent:]
+                        # 写入文件并返回文件名
+                        recv_name = f'REC_{file_name}_{get_current_time_apply_to_filename()}'
+                        with open(file_path+recv_name, 'wb') as f:
+                            f.write(file_data)
+                        logging.critical(f"{self}接收到客户端传输的文件{file_name}")
+                        return recv_name
+                else:
+                    raise
+            except Exception as e:
+                logging.error(f"{self}读取数据为空：{e}")
+                return None
+        except Exception as e :
+            logging.error(f"{self}没有数据可读：{e}")
+            return None
 
-# 在这个类中，我们创建了一个TCP服务器，它使用server_ip和server_port绑定到服务器。open和close函数仅用于占位符，因为在这个例子中它们不需要做任何事情。read函数从连接的客户端读取数据，并将其写入名为filename的文件中。write函数从名为filename的文件中读取数据，并将其写入到指定的target_ip和target_port。
+    """ 向设备写入文件    """
+    def write(self, file_path, file_name):
+        try:
+            # 检测文件是否存在
+            if not os.path.exists(file_path+file_name):
+                raise
 
+            try:
+                # 建立TCP客户端
+                client = TcpClient(self.target_ip, self.target_port)
 
-# 请注意，在read和write函数中，我们使用了struct模块来打包和解包文件名和文件大小，以便在传输过程中传递这些信息。我们还使用了一个缓冲区来存储待发送的数据，以便在网络连接不稳定时能够处理数据的丢失和重传。与syncore模块不同，asyncore模块是异步的，因此它更适合处理大量的网络连接。同样，这个类只是一个基本示例，为了使它适合特定的应用程序，需要根据需要进行修改。
+                # 构建包=文件名称+文件大小+文件数据
+                file_size = os.path.getsize(file_path+file_name)
+                with open(file_path+file_name, "rb") as file_obj:
+                    file_data = file_obj.read()
+                package = struct.pack('32sQ', file_name.encode('utf-8'), file_size) + file_data
 
+                # 向目标服务器发送数据
+                client.send_to_server(package)
+                client.close()
+                return file_size
+            except Exception as e:
+                logging.error(f"{self}写入文件时{file_path+file_name}错误")
+                return -1
+        except Exception as e:
+            logging.error(f"{self}写入的文件{file_path+file_name}不存在")
+            return -1
 
-
+    """ 解析数据  """
+    def _parse_packet(self, data):
+        file_name, file_size = struct.unpack('32sQ', data[:32+8])
+        file_name = file_name.decode('utf-8').rstrip('\0')
+        file_data = data[264:]
+        return file_name, file_size, file_data
 '''
 description: 检测IP是否为主机地址
 '''
@@ -145,3 +149,4 @@ def detectHostIPIsExisted(ip):
     hostname = socket.gethostname()
     hostip   = socket.gethostbyname(hostname)
     return ip in hostip
+

@@ -2,13 +2,9 @@
 import os
 import math
 import logging
-from serial.serialutil import to_bytes
 from enum import Enum
-
 from ..utils.get_time import get_current_time_apply_to_filename
-
 from .mserial    import *
-from ..tool.mlocaltime import get_localtime_str_by_second
 
 class mCommCmd(Enum):
     CMD_FILEINFO    = b'\x01'
