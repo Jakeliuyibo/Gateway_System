@@ -2,7 +2,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-05-20 21:49:00
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-21 16:20:27
+LastEditTime: 2023-05-22 14:24:13
 FilePath: \Gateway_System\control\src\driver\msocket.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 '''
@@ -11,6 +11,8 @@ import socket
 import threading
 import logging
 import time
+
+TCP_TRANS_SIZE = 4 * 1024 * 1024           # TCP传输缓冲区大小
 
 # 定义TcpServer类
 class TcpServer:
@@ -51,7 +53,7 @@ class TcpServer:
     def recv_from_client(self, client, addr):
         # 阻塞等待客户端数据
         while True:
-            if data:= client.recv(1024):
+            if data:= client.recv(TCP_TRANS_SIZE):
                 # 写入数据缓存
                 self.write_to_buf(data)
             else:
@@ -74,13 +76,18 @@ class TcpServer:
     """ 检测是否有数据可读                  """
     def readable(self):
         with self.buf_lock:
-            ret = len(self.read_from_client_buf) >= 40
+            ret = len(self.read_from_client_buf) > 0
+        return ret
+
+    """ 检测缓存read_from_client_buf可读数据大小    """
+    def size(self):
+        with self.buf_lock:
+            ret = len(self.read_from_client_buf)
         return ret
 
     """ 关闭服务器                         """
     def close(self):
         self.server.close()
-
 
 '''
 description: 基于阻塞的TCP客户端
@@ -106,9 +113,9 @@ class TcpClient:
             if not self.is_Connected:
                 raise
 
-            # 发送数据，每个包长1024
+            # 发送数据，每个包长TCP_TRANS_SIZE
             while data:
-                sent = self.client.send(data[:1024])
+                sent = self.client.send(data[:TCP_TRANS_SIZE])
                 data = data[sent:]
         except Exception as e:
             self.close()
