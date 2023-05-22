@@ -4,4 +4,5 @@ logs/device/*.log
 logs/web/*.log
 storage/device/acoustic/*
 storage/device/optical/*
+storage/device/radio/*
 storage/upload/*

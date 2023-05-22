@@ -13,8 +13,7 @@ from .models.model       import *
 # ! 设备列表、任务队列、处理池的定义
 mdevicelist      = mDeviceList()                            # device list
 mtaskqueue       = mTaskQueue(maxsize=10, timeout=3)        # task queue
-# mdealprocesspool = ProcessPoolExecutor(10)                  # process pool
-mdealprocesspool = ThreadPoolExecutor(10)                   # thread pool
+mprocesspool     = ThreadPoolExecutor(10)                   # thread pool
 
 ###################################### manage device list     ###################################
 ###################################### manage device list     ###################################
@@ -191,7 +190,7 @@ def monitor_task_queue_threadhandle():
         submit_task = mtaskqueue.get()
 
         # submit task to processpool
-        fur = mdealprocesspool.submit(deal_data_forwarding_processhandle, args=(submit_task,))
+        fur = mprocesspool.submit(deal_data_forwarding_processhandle, args=(submit_task,))
 
         # set callback function
         fur.add_done_callback(deal_data_forwarding_callback)
@@ -272,7 +271,7 @@ def test_for_core_scheduling():
         tt.join()
 
     # close
-    mdealprocesspool.shutdown()
+    mprocesspool.shutdown()
     mtaskqueue.close()
     mdevicelist.close()
     session.close()

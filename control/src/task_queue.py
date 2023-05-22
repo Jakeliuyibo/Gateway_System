@@ -17,7 +17,7 @@ from .tool.mformatconv import *
 class mTaskFlowDirectionEnum(Enum):
     DIRECT_FILE_TO_DEVICE = 1
     DIRECT_DEVICE_TO_FILE = 2
-    
+
 """ task queue priority enum    """
 class mTaskPriorityEnum(Enum):
     PRIOR_LOW    = 1
@@ -38,11 +38,11 @@ class mTask(object):
         self._file_name = file_name
         self._file_path = file_path
         self._file      = file_path + file_name
-        
+
         self._device    = device
         self._direct    = direct
         self._priority  = priority
-    
+
     def __repr__(self):
         return f'任务(文件{self._file} 设备{self._device} 方向{self._direct} 优先级{self._priority})'
 
