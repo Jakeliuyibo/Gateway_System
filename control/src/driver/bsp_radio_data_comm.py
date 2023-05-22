@@ -2,7 +2,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-05-20 12:49:17
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-22 14:35:20
+LastEditTime: 2023-05-22 18:50:48
 FilePath: \Gateway_System\control\src\driver\bsp_optical_fiber_comm.py
 Description: 数传通信驱动文件,基于socket的封装
 '''
@@ -34,7 +34,7 @@ class mRadioDataCommDevice(mRadioDataCommBase):
 
         # init defconfig
         self.localserver_obj    = None
-        self.recv_buf           = b''               # 读取缓存
+        self.recv_buf           = {}                    # 读取缓存
         self.is_open            = False
 
     def __repr__(self):
@@ -51,7 +51,7 @@ class mRadioDataCommDevice(mRadioDataCommBase):
                 raise
 
             # 初始化本地服务器
-            self.localserver_obj    = TcpServer(self.local_ip, self.local_port)
+            self.localserver_obj    = TcpServer_Multiplexing(self.local_ip, self.local_port)
             self.is_open            = True
         except Exception as e:
             logging.error(f"ERROR   : {self} try to open failed, {e}")
@@ -66,38 +66,44 @@ class mRadioDataCommDevice(mRadioDataCommBase):
 
     """ 检测tcp服务器是否有数据可读 """
     def isReadable(self):
-        return self.localserver_obj.size() > self.FILE_INFO_LEN and len(self.recv_buf)==0
+        flag, sock = self.localserver_obj.readable(self.FILE_INFO_LEN)
+        if sock not in self.recv_buf:
+            self.recv_buf[sock] = b''
+        return flag and len(self.recv_buf[sock])==0
 
     """ 从设备读取文件             """
     def read(self, file_path):
         try:
-            if not self.isReadable():
+            flag, sock = self.localserver_obj.readable(self.FILE_INFO_LEN)
+            if not flag:
                 raise
 
             try:
                 # 读取数据并存入缓存
-                data = self.localserver_obj.read_from_buf()
+                data = self.localserver_obj.read_from_buf(sock)
                 if data:
-                    self.recv_buf += data
+                    if sock not in self.recv_buf:
+                        self.recv_buf[sock] = b''
+                    self.recv_buf[sock] += data
 
-                    if len(self.recv_buf) < self.FILE_INFO_LEN:
-                        logging.error(f"{self}读取数据长度不足self.FILE_INFO_LEN")
+                    if len(self.recv_buf[sock]) < self.FILE_INFO_LEN:
+                        logging.error(f"{self}读取数据长度不足FILE_INFO_LEN")
                         return None
                     else:
                         # 解析文件名+文件大小
-                        file_name, file_size = struct.unpack('%dsQ'%(self.FILE_NAME_LEN), self.recv_buf[:self.FILE_INFO_LEN])
+                        file_name, file_size = struct.unpack('%dsQ'%(self.FILE_NAME_LEN), self.recv_buf[sock][:self.FILE_INFO_LEN])
                         file_name = file_name.decode('utf-8').rstrip(self.FILE_NAME_STRIP)
                         # 死循环读取直到长度大于等于file_size+self.FILE_INFO_LEN
-                        while len(self.recv_buf) < file_size + self.FILE_INFO_LEN:
-                            data = self.localserver_obj.read_from_buf()
+                        while len(self.recv_buf[sock]) < file_size + self.FILE_INFO_LEN:
+                            data = self.localserver_obj.read_from_buf(sock)
                             if data:
-                                self.recv_buf += data
+                                self.recv_buf[sock] += data
                             time.sleep(1)
 
                         # 解析文件数据
-                        file_data = self.recv_buf[self.FILE_INFO_LEN: self.FILE_INFO_LEN+file_size]
+                        file_data = self.recv_buf[sock][self.FILE_INFO_LEN: self.FILE_INFO_LEN+file_size]
                         # 删除缓存中的数据
-                        self.recv_buf = self.recv_buf[self.FILE_INFO_LEN + file_size:]
+                        self.recv_buf[sock] = self.recv_buf[sock][self.FILE_INFO_LEN + file_size:]
 
                         # 写入文件并返回文件名
                         recv_name = f'REC_{file_name}_{get_current_time_apply_to_filename()}'
