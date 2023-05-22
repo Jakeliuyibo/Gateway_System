@@ -211,7 +211,6 @@ class mUnderwaterAscousticCommDevice(object):
             logging.error(f"{self}接收一帧数据发生错误，错误原因：{e}")
 
 
-
 """ 检测端口是否存在 """
 def detectPortIsExisted(port):
     # get current active com device

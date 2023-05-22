@@ -6,6 +6,7 @@ import threading
 from .driver.bsp_underwater_acoustic_comm   import mUnderwaterAscousticCommDevice
 from .driver.bsp_satellite_comm             import mSatelliteCommDevice
 from .driver.bsp_optical_fiber_comm         import mOpticalFiberCommDevice
+from .driver.bsp_radio_data_comm            import mRadioDataCommDevice
 from .tool.mlocaltime   import *
 from .tool.mformatconv  import *
 from .models.model      import *
@@ -51,10 +52,12 @@ class mDevice(object):
             local_ip , local_port  = self.device_interface.split(':')
             target_ip, target_port = self.device_property.get("target_interface").split(':')
             self.device_obj = mOpticalFiberCommDevice(local_ip , int(local_port), target_ip, int(target_port))
-        else:
-            # TODO 添加设备
-            pass
+        elif self.device_name == "radio data trans module":                         # 数传通信设备
+            local_ip , local_port  = self.device_interface.split(':')
+            target_ip, target_port = self.device_property.get("target_interface").split(':')
+            self.device_obj = mRadioDataCommDevice(local_ip , int(local_port), target_ip, int(target_port))
 
+    # TODO 这这里添加设备
     def __repr__(self):
         return '设备(%r)' % (self.device_description)
 
