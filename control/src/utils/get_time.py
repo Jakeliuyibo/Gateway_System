@@ -3,7 +3,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-02-15 16:44:20
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-21 18:24:44
+LastEditTime: 2023-06-05 13:36:49
 FilePath: /RL_Simulation_Of_UWSNs/utils/get_time.py
 Description: 获取系统时间
 '''
@@ -31,3 +31,8 @@ def cal_diff_time_between_date1_and_date2(t1, t2):
     end   = datetime.datetime.strptime(t2,"%Y-%m-%d %H:%M:%S.%f")
 
     return (end-start).seconds + (end-start).microseconds/1000000 if end > start else -1
+
+""" 获取当前时间 """
+def get_current_time_with_bias(bias):
+    dt = datetime.datetime.fromtimestamp(time.time())  - datetime.timedelta(seconds=bias)
+    return dt.strftime('%Y-%m-%d %H:%M:%S.%f')

@@ -147,12 +147,3 @@ class mRadioDataCommDevice(mRadioDataCommBase):
         except Exception as e:
             logging.error(f"{self}写入的文件{file_path+file_name}不存在")
             return -1
-
-'''
-description: 检测IP是否为主机地址
-'''
-def detectHostIPIsExisted(ip):
-    hostname = socket.gethostname()
-    hostip   = socket.gethostbyname(hostname)
-    return ip in hostip
-

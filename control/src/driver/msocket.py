@@ -214,3 +214,16 @@ class TcpServer_Multiplexing(TcpBase):
     """ 关闭服务器                         """
     def close(self):
         self.server.close()
+
+
+'''
+description: 检测IP是否为主机地址
+'''
+from netifaces import interfaces, ifaddresses, AF_INET
+def detectHostIPIsExisted(ip):
+    localIP_list = []
+    for ifaceName in interfaces():
+        addresses = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] )]
+        localIP_list.append(addresses[0])
+
+    return ip in localIP_list

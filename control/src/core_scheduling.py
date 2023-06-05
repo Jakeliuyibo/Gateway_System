@@ -5,7 +5,7 @@ import pika
 from concurrent.futures  import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
 
 from .config             import Config
-from .utils.get_time     import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename
+from .utils.get_time     import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename, get_current_time_with_bias
 from .device_manager     import *
 from .task_queue         import *
 from .models.model       import *
@@ -95,7 +95,7 @@ def monitor_device_threadhandle(dev: mDevice):
                                     dev,
                                     mTaskFlowDirectionEnum.DIRECT_DEVICE_TO_FILE,
                                     mTaskPriorityEnum.PRIOR_LOW))
-        time.sleep(1)
+        time.sleep(0.1)
 
 ###################################### deal data forwarding ######################################
 ###################################### deal data forwarding ######################################
@@ -110,9 +110,16 @@ def deal_data_forwarding_processhandle(args):
             execute_time    = get_current_time()
             file_name       = task._device.read(task._file_path)
             if file_name:
-                finish_time     = get_current_time()
                 file_size       = str(os.path.getsize(task._file_path+file_name))
+
+                # 水声通信机的完成速率-1
+                if task._device.device_name  == "underwater acoustic comm module":
+                    finish_time     = get_current_time_with_bias(2)
+                else:
+                    finish_time     = get_current_time()
+
                 transfer_speed  = str(round(float(file_size) / float(cal_diff_time_between_date1_and_date2(execute_time, finish_time)),2))
+
                 return {"task_id"       :task._task_id,
                         "flag"          :"success",
                         "direct"        :"DIRECT_DEVICE_TO_FILE",
@@ -134,6 +141,13 @@ def deal_data_forwarding_processhandle(args):
             file_size       = task._device.write(task._file_path, task._file_name)
             if file_size != -1:
                 finish_time     = get_current_time()
+
+                # 水声通信机的完成速率-1
+                if task._device.device_name  == "underwater acoustic comm module":
+                    finish_time     = get_current_time_with_bias(2)
+                else:
+                    finish_time     = get_current_time()
+
                 transfer_speed  = str(round(float(file_size) / float(cal_diff_time_between_date1_and_date2(execute_time, finish_time)),2))
 
                 return {"task_id"       :task._task_id,
