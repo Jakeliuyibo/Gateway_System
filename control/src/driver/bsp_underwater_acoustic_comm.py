@@ -133,7 +133,7 @@ class mUnderwaterAscousticCommDevice(object):
                         raise ValueError
                     rec_data += idx_data
                 # 写入文件
-                rece_file_name = f'REC_{file_name}_{get_current_time_apply_to_filename()}'
+                rece_file_name = f'{file_name}.REC_{get_current_time_apply_to_filename()}'
                 with open(file_path+rece_file_name, 'ab') as file_obj:
                     file_obj.write(rec_data)
                 return rece_file_name

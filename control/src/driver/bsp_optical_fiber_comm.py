@@ -100,7 +100,7 @@ class mOpticalFiberCommDevice(mOpticalFiberCommBase):
                         self.recv_buf = self.recv_buf[self.FILE_INFO_LEN + file_size:]
 
                         # 写入文件并返回文件名
-                        recv_name = f'REC_{file_name}_{get_current_time_apply_to_filename()}'
+                        recv_name = f'{file_name}.REC_{get_current_time_apply_to_filename()}'
                         with open(file_path+recv_name, 'wb') as f:
                             f.write(file_data)
                         logging.critical(f"{self}接收到客户端传输的文件{file_name}")
