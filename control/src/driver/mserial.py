@@ -19,7 +19,7 @@ class mSerial(object):
         self.scom_port      = port
         self.scom_baudrate  = baudrate
         self.scom_timeout   = timeout
-        
+
         # try to open scom interface
         try:
             if detectPortIsExisted(port):
@@ -34,15 +34,15 @@ class mSerial(object):
 
     def __repr__(self):
         return '串口(端口%r 状态%r)' % (self.scom_port, self.flagState)
-    
+
     """ detect the serial open status         """
     def isOpen(self):
         return self.flagState
-    
+
     """ detect the serial is readable         """
     def isReadable(self):
         return self.scom_obj.inWaiting() != 0
-    
+
     """ read bytes data from serial           """
     def read(self):
         try:
@@ -56,7 +56,7 @@ class mSerial(object):
                 raise
         except Exception as e:
             print(f"ERROR   : {self} try to read data, err-{e}")
-            
+
     """ read bytes data from serial           """
     def read_size(self, size):
         try:
@@ -66,7 +66,7 @@ class mSerial(object):
                 raise
         except Exception as e:
             print(f"ERROR   : {self} try to read data, err-{e}")
-            
+
     """ read bytes data until expected char    """
     def readuntil(self, expc):
         try:
@@ -80,7 +80,7 @@ class mSerial(object):
                 raise ModuleNotFoundError
         except Exception as e:
             print(f"ERROR   : {self} try to read data until expc char, but timeout, err-{e}")
-            
+
     """ write bytes data to serial    """
     def write(self, data):
         try:
@@ -88,7 +88,7 @@ class mSerial(object):
                 self.scom_obj.write(data)
         except Exception as e:
             print(f"ERROR   : {self} try to write dato, err-{e}")
-    
+
     """ close serial            """
     def close(self):
         try:
