@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-10 22:08:05
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-15 10:22:58
+LastEditTime: 2023-06-26 21:05:54
 FilePath: \Gateway_Management_System\app\views\device\views.py
 Description: 注册device模块的view视图
 '''
@@ -15,7 +15,7 @@ from flask import current_app, jsonify, render_template, request, make_response,
 from . import *
 from ... import db, redis_store
 from ...public import amis_ret
-from ...utils.get_time import get_current_time, transfer_format_from_date_to_datetime, generate_datelist_by_startenddate,transfer_format_from_datetime_to_date
+from ...utils.get_time import *
 from ...config import Config
 from ...models.models import User, Device, Uploadfiles, Tasks
 from sqlalchemy.sql import and_
@@ -192,7 +192,7 @@ def receive_file_from_web():
 
     file_name               = request_file.filename
     file_source             = session.get("user_name")
-    file_upload_time        = get_current_time()
+    file_upload_time        = get_current_time_apply_to_filename()
     file_local_storage_path = Config.UPLOAD_FILE_STORAGE_PATH
 
     if os.path.exists(file_local_storage_path+file_name):
@@ -298,7 +298,8 @@ def add_device_task_to_db(device_id):
                     add_task.task_name          = "task device%d-file%d"%(add_task.target_device_id, add_task.source_file_id)
                     add_task.task_priority      = "0"
                     add_task.task_status        = "schedule"                    # success\pending\queue\schedule\fail
-                    add_task.task_submit_time   = get_current_time()
+                    add_task.task_submit_time   = get_current_time_with_ms()
+                    logging.critical(f"增加任务的时间{add_task.task_submit_time}")
                     add_task.task_submit_source = session.get("user_name")
                     db.session.add(add_task)
                     logging.critical(f"向数据库写入任务信息{add_task.task_name}成功")
@@ -435,10 +436,10 @@ def get_alldevices_taskinfo_for_chart1():
                 tasks = db_obj.all()
                 for task in tasks:
                     task_count_list[idx]     += 1
-                    dataflow_count_list[idx] += int(task.source_file_size)
-                    transfer_speed_list[idx] += int(task.task_transfer_speed)
+                    dataflow_count_list[idx] += float(task.source_file_size)
+                    transfer_speed_list[idx] += float(task.task_transfer_speed)
             except Exception as e:
-                pass
+                logging.error(f"渲染Chart1时查询设备{idx}的历史任务出错，错误原因{e}")
 
             dataflow_count_list[idx] = round(dataflow_count_list[idx] / size_divisior, 2)
             if task_count_list[idx] > 0:
@@ -492,16 +493,17 @@ def get_alldevices_taskinfo_for_chart2():
 
         # 遍历选择的设备
         for idx, device_id in enumerate(selectdeviceid_list):
-            dataflow_list    = [0] * len(selectdate_list)
+            dataflow_list    = [0.0] * len(selectdate_list)
             try:
                 # 查询Tasks表对应设备的任务信息
                 db_obj = db.session.query(Tasks).filter_by(target_device_id=device_id).filter(and_(Tasks.task_finish_time>start_datetime, Tasks.task_finish_time<end_datetime, Tasks.task_status=="success"))
 
                 tasks = db_obj.all()
                 for task in tasks:
-                    task_finish_date = transfer_format_from_datetime_to_date(task.task_finish_time)
+
+                    task_finish_date = transfer_format_from_datetime_with_ms_to_date(task.task_finish_time)
                     if task_finish_date in selectdate_list:
-                        dataflow_list[selectdate_list.index(task_finish_date)] += round(int(task.source_file_size) / size_divisior, 2)
+                        dataflow_list[selectdate_list.index(task_finish_date)] += round(float(task.source_file_size) / size_divisior, 2)
 
                 ret_data["legend"]["data"].append(selectdevicedesc_list[idx])
                 ret_data["series"].append({
@@ -512,7 +514,7 @@ def get_alldevices_taskinfo_for_chart2():
                         "markPoint": {"data": [{ "type": 'max', "name": 'Max' }]},
                     })
             except Exception as e:
-                pass
+                logging.error(f"渲染Chart2时查询设备{idx}的历史任务出错，错误原因{e}")
 
         if ret_data["series"]:
             return amis_ret(data=ret_data, status=0, msg="查询设备任务图表成功")

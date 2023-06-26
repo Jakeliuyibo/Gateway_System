@@ -54,7 +54,7 @@ class mRadioDataCommDevice(mRadioDataCommBase):
             self.localserver_obj    = TcpServer_Multiplexing(self.local_ip, self.local_port)
             self.is_open            = True
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to open failed, {e}")
+            logging.info(f"ERROR   : {self} try to open failed, {e}")
 
     """ 关闭设备    """
     def close(self):
@@ -62,7 +62,7 @@ class mRadioDataCommDevice(mRadioDataCommBase):
             self.localserver_obj.close()
             self.is_open            = False
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to close device")
+            logging.info(f"ERROR   : {self} try to close device")
 
     """ 检测tcp服务器是否有数据可读 """
     def isReadable(self):

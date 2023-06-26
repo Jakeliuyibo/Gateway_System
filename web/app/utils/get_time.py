@@ -1,5 +1,5 @@
 """
-Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved 
+Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-14 23:06:18
 LastEditors: liuyibo 1299502716@qq.com
@@ -11,9 +11,14 @@ import datetime
 import time
 import datedays
 
+""" 获取当前时间 """
 def get_current_time():
-    """ 获取当前时间 """
     return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+
+""" 获取当前时间，带有小数 """
+def get_current_time_with_ms():
+    dt = datetime.datetime.fromtimestamp(time.time())
+    return dt.strftime('%Y-%m-%d %H:%M:%S.%f')
 
 """ 获取当前时间 """
 def get_current_time_apply_to_filename():
@@ -23,13 +28,18 @@ def transfer_format_from_date_to_datetime(date, type="start"):
     """ 将日期格式转化为日期时间格式 """
     date = datetime.datetime.strptime(date,"%Y-%m-%d")
     if type == "start":     # format = "%Y-%m-%d 00:00:00"
-        return  date     
+        return  date
     elif type == "end":     # format = "%Y-%m-%d 23:59:59"
         return  date + datetime.timedelta(days=1) - datetime.timedelta(seconds=1)
 
 def transfer_format_from_datetime_to_date(date_time):
     """ 将日期时间格式转化为日期格式 """
     date = datetime.datetime.strptime(date_time,"%Y-%m-%d %H:%M:%S")
+    return date.strftime('%Y-%m-%d')
+
+def transfer_format_from_datetime_with_ms_to_date(date_time):
+    """ 将日期时间格式转化为日期格式 """
+    date = datetime.datetime.strptime(date_time,"%Y-%m-%d %H:%M:%S.%f")
     return date.strftime('%Y-%m-%d')
 
 def generate_datelist_by_startenddate(start_date, end_date):

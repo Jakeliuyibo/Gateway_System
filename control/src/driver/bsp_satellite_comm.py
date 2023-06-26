@@ -2,125 +2,152 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-05-08 15:50:48
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-08 15:51:00
+LastEditTime: 2023-06-26 19:58:56
 FilePath: \Gateway_System\control\src\driver\bsp_satellite_comm.py
 Description: 天通通信驱动文件
 '''
 
-from .mserial    import *
+import os
+import socket
+import logging
+import threading
+import struct
+import random
+from ..utils.get_time import get_current_time_apply_to_filename
+from .msocket import *
 
+class mSatelliteCommBase(object):
+    FILE_NAME_LEN               = 32                             # 传输的文件名长度
+    FILE_SIZE_LEN               = 8                              # 传输的文件大小长度
+    FILE_INFO_LEN               = FILE_NAME_LEN + FILE_SIZE_LEN  # 传输的文件信息长度
+    FILE_NAME_STRIP             = '\x00'                         # 传输文件名末位填充符
 
-class mSatelliteCommDevice(object):
-    """_summary_
-    achieve satellite communication device, wihch is a serial device and based on AT command
-    Args:
-        port             : port name
-        timeout          : port configure and IO out-time , if time=0 : no wait, else wait (time) seconds
-    """
-    def __init__(self, port, timeout=5):
-        """ init satellite device   """
-        self._port = port
+'''
+description: 实现了天基通信驱动
+'''
+class mSatelliteCommDevice(mSatelliteCommBase):
+    """ init device   """
+    def __init__(self, local_ip , local_port, target_ip, target_port):
+        # parse parameters
+        self.local_ip           = local_ip              # 本地服务器IP地址
+        self.local_port         = local_port            # 本地服务器端口号
+        self.target_ip          = target_ip             # 目的服务器IP地址
+        self.target_port        = target_port           # 目的服务器端口号
 
-        # init flag
-        self._flagOpen           = False
+        # init defconfig
+        self.localserver_obj    = None
+        self.recv_buf           = b''                   # 读取缓存
+        self.is_open            = False
 
+    def __repr__(self):
+        return '天基通信(状态%r)' % (self.is_open)
+
+    """ 检测设备是否在线  """
     def isOpen(self):
-        """ detect satellite is open            """
-        return self._flagOpen
+        return self.is_open
 
-    def isReadable(self):
-        """ detect satellite is readable        """
-        return self._serial.isReadable()
-
+    """ 打开设备    """
     def open(self):
-        """ open satellite device               """
         try:
-            self._serial = mSerial(self._port, baud_rate=115200, timeout=5)
-            self._flagOpen       = True
-            self.write("init ok")
-        except Exception as e:
-            self._serial = None
-            self._flagOpen       = False
-            print("ERROR   : Open Satellite", self._port)
+            if not detectHostIPIsExisted(self.local_ip):
+                raise
 
+            # 初始化本地服务器
+            self.localserver_obj    = TcpServer(self.local_ip, self.local_port)
+            self.is_open            = True
+        except Exception as e:
+            logging.info(f"ERROR   : {self} try to open failed, {e}")
+
+    """ 关闭设备    """
     def close(self):
-        """ open satellite device               """
         try:
-            self._serial.close()
-            self._flagOpen       = False
+            self.localserver_obj.close()
+            self.is_open            = False
         except Exception as e:
-            print("ERROR   : Close Satellite", self._port)
+            logging.info(f"ERROR   : {self} try to close device")
 
-    def write(self, data):
-        """ write data to satellite device      """
+    """ 检测tcp服务器是否有数据可读 """
+    def isReadable(self):
+        return self.localserver_obj.size() > self.FILE_INFO_LEN and len(self.recv_buf)==0
+
+    """ 从设备读取文件             """
+    def read(self, file_path):
         try:
-            if self._serial.isOpen():
-                # write data to serial
-                self._serial.write(data)
-            else:
+            if not self.isReadable():
                 raise
-        except Exception as e:
-            print("ERROR   : Write Satellite", self._port)
 
-    def read(self):
-        """ read data from satellite device     """
-        try:
-            if self.isOpen():
-                # open storage file
-                if self.isReadable():
-                    return self._serial.read()
-                else:
-                    return None
-            else:
-                raise
-        except Exception as e:
-            print("ERROR   : Read Device", self._device)
-
-    def communicate(self, cmd):
-        """ send AT command and wait a reply    """
-        try:
-            self._serial.write(cmd+"\r\n")
-            reply = self._serial.readuntil(b'\n')
-            if reply:
-                return reply.replace("\r\n", "")
-            else:
-                raise IOError
-        except Exception as e:
-            print("ERROR   : Communicate Satellite", self._port)
-
-    def match(self):
-        """ match device            """
-        if self._serial.isOpen():
-            if "ok" == self.communicate("AT"):
-                return True
-            else:
-                return False
-
-
-def test_for_connect_satellite_device(device='/dev/ttyUSB0'):
-    try:
-        msatellite = mSatelliteDevice(device, timeout=5)
-        msatellite.open()
-        if not msatellite.isOpen():
-            raise
-        else:
             try:
-                if msatellite.match():
-                    print("SUCCESS : Connect Serial %s"%msatellite._port)
-                    msg = msatellite.communicate("AT+Cmd=1")
-                    if msg:
-                        print("SUCCESS : Communicate Serial %s %s"%(msatellite._port, msg))
+                # 读取数据并存入缓存
+                data = self.localserver_obj.read_from_buf()
+                if data:
+                    self.recv_buf += data
+
+                    if len(self.recv_buf) < self.FILE_INFO_LEN:
+                        logging.error(f"{self}读取数据长度不足self.FILE_INFO_LEN")
+                        return None
                     else:
-                        raise
+                        # 解析文件名+文件大小
+                        file_name, file_size = struct.unpack('%dsQ'%(self.FILE_NAME_LEN), self.recv_buf[:self.FILE_INFO_LEN])
+                        file_name = file_name.decode('utf-8').rstrip(self.FILE_NAME_STRIP)
+                        # 死循环读取直到长度大于等于file_size+self.FILE_INFO_LEN
+                        while len(self.recv_buf) < file_size + self.FILE_INFO_LEN:
+                            data = self.localserver_obj.read_from_buf()
+                            if data:
+                                self.recv_buf += data
+                            time.sleep(1)
+
+                        # 解析文件数据
+                        file_data = self.recv_buf[self.FILE_INFO_LEN: self.FILE_INFO_LEN+file_size]
+                        # 删除缓存中的数据
+                        self.recv_buf = self.recv_buf[self.FILE_INFO_LEN + file_size:]
+
+                        # 写入文件并返回文件名
+                        recv_name = f'REC_{file_name}_{get_current_time_apply_to_filename()}'
+                        with open(file_path+recv_name, 'wb') as f:
+                            f.write(file_data)
+                        logging.critical(f"{self}接收到客户端传输的文件{file_name}")
+
+                        # 延迟
+                        time.sleep(2.35+0.1*random.randint(0,100)/100)
+
+                        return recv_name
                 else:
                     raise
             except Exception as e:
-                print("exception ",e)
-            finally:
-                msatellite.close()
-    except Exception as e:
-        print("test_for_connect_satellite_device error ",e)
+                logging.error(f"{self}读取数据为空：{e}")
+                return None
+        except Exception as e :
+            logging.error(f"{self}没有数据可读：{e}")
+            return None
 
+    """ 向设备写入文件    """
+    def write(self, file_path, file_name):
+        try:
+            # 检测文件是否存在
+            if not os.path.exists(file_path+file_name):
+                raise
 
-if __name__ == "__main__":
-    test_for_connect_satellite_device()
+            try:
+                # 建立TCP客户端
+                client = TcpClient(self.target_ip, self.target_port)
+
+                # 构建包=文件名称+文件大小+文件数据
+                file_size = os.path.getsize(file_path+file_name)
+                with open(file_path+file_name, "rb") as file_obj:
+                    file_data = file_obj.read()
+                package = struct.pack('%dsQ'%(self.FILE_NAME_LEN), file_name.encode('utf-8'), file_size) + file_data
+
+                # 向目标服务器发送数据
+                client.send_to_server(package)
+                client.close()
+
+                # 延迟
+                time.sleep(2.38+0.1*random.randint(0,100)/100)
+
+                return file_size
+            except Exception as e:
+                logging.error(f"{self}写入文件时{file_path+file_name}错误")
+                return -1
+        except Exception as e:
+            logging.error(f"{self}写入的文件{file_path+file_name}不存在")
+            return -1

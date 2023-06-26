@@ -61,7 +61,7 @@ class mUnderwaterAscousticCommDevice(object):
             self.serial_obj = serial.Serial(port=self.serial_port, baudrate=self.serial_baudrate, timeout=self.serial_timeout)
             self.is_open    = True
         except Exception as e:
-            logging.info(f"ERROR   : {self} try to open failed")
+            logging.error(f"ERROR   : {self} try to open failed")
 
     """ 关闭设备             """
     def close(self):
@@ -72,7 +72,7 @@ class mUnderwaterAscousticCommDevice(object):
             self.serial_obj.close()
             self.is_open    = False
         except Exception as e:
-            logging.info(f"ERROR   : {self} try to close device")
+            logging.error(f"ERROR   : {self} try to close device")
 
 
     """ 写入文件             """
@@ -186,7 +186,6 @@ class mUnderwaterAscousticCommDevice(object):
             ret_data = b''
 
             # 读取一帧数据
-            # TODO bug读取到空数据
             # data = self.serial_obj.readline()
             data = self.serial_obj.read(size=57)
             logging.critical(f"{self} 接收到一帧数据{data}")

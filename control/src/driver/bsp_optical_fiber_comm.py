@@ -2,7 +2,7 @@
 Author: liuyibo 1299502716@qq.com
 Date: 2023-05-20 12:49:17
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-22 14:18:11
+LastEditTime: 2023-06-26 19:54:48
 FilePath: \Gateway_System\control\src\driver\bsp_optical_fiber_comm.py
 Description: 光纤通信驱动文件,基于socket的封装
 '''
@@ -34,7 +34,7 @@ class mOpticalFiberCommDevice(mOpticalFiberCommBase):
 
         # init defconfig
         self.localserver_obj    = None
-        self.recv_buf           = b''               # 读取缓存
+        self.recv_buf           = b''                   # 读取缓存
         self.is_open            = False
 
     def __repr__(self):
@@ -54,7 +54,7 @@ class mOpticalFiberCommDevice(mOpticalFiberCommBase):
             self.localserver_obj    = TcpServer(self.local_ip, self.local_port)
             self.is_open            = True
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to open failed, {e}")
+            logging.info(f"ERROR   : {self} try to open failed, {e}")
 
     """ 关闭设备    """
     def close(self):
@@ -62,7 +62,7 @@ class mOpticalFiberCommDevice(mOpticalFiberCommBase):
             self.localserver_obj.close()
             self.is_open            = False
         except Exception as e:
-            logging.error(f"ERROR   : {self} try to close device")
+            logging.info(f"ERROR   : {self} try to close device")
 
     """ 检测tcp服务器是否有数据可读 """
     def isReadable(self):

@@ -43,9 +43,11 @@ class mDevice(object):
         # init device obj according to identify
         self.device_obj        = None
         self.is_Open           = False
-        self._wlock            = threading.Lock()               # device write lock
+        self._wlock            = threading.Lock()                                   # 设备写锁
         if self.device_name    == "satellite comm module":                          # 天通通信设备
-            self.device_obj = mSatelliteCommDevice(self.device_interface)
+            local_ip , local_port  = self.device_interface.split(':')
+            target_ip, target_port = self.device_property.get("target_interface").split(':')
+            self.device_obj = mSatelliteCommDevice(local_ip , int(local_port), target_ip, int(target_port))
         elif self.device_name  == "underwater acoustic comm module":                # 水声通信设备
             self.device_obj = mUnderwaterAscousticCommDevice(self.device_interface)
         elif self.device_name == "optical fiber comm module":                       # 光纤通信设备
@@ -57,7 +59,6 @@ class mDevice(object):
             target_ip, target_port = self.device_property.get("target_interface").split(':')
             self.device_obj = mRadioDataCommDevice(local_ip , int(local_port), target_ip, int(target_port))
 
-    # TODO 这这里添加设备
     def __repr__(self):
         return '设备(%r)' % (self.device_description)
 
