@@ -8,8 +8,10 @@ FilePath: \Gateway_System\main.py
 Description: 主函数，通过python main.py启动网关软件
 '''
 # 为了防止Linux使用sudo python main.py执行程序时与python main.py的调用包不同，因此添加路径
-# import sys
-# sys.path.insert(0, r"/home/nano/.local/lib/python3.8/site-packages")
+import platform
+if platform.system() == 'Linux':
+    import sys
+    sys.path.insert(0, r"/home/nano/.local/lib/python3.8/site-packages")
 from multiprocessing import Process
 from web.app import create_app, run_test_server
 from control.src import init_device

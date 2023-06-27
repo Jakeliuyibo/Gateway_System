@@ -4,7 +4,7 @@ Copyright (C) 2022 - 2023 liuyibo. All Rights Reserved
 Author: liuyibo 1299502716@qq.com
 Date: 2023-01-07 19:06:57
 LastEditors: liuyibo 1299502716@qq.com
-LastEditTime: 2023-05-15 10:41:43
+LastEditTime: 2023-06-27 11:13:51
 FilePath: \Gateway_Management_System\app\config.py
 Description: flask的默认配置
 '''
@@ -27,16 +27,16 @@ class Config(object):
     if OS_SYSTEM == 'Windows':      # ! Windows
         # 数据库配置
         SQLALCHEMY_DATABASE_URI      = "sqlite:///" + "Y:/Studyplace_Web_Development/Gateway_System" + "/db/gateway.db"
-        LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
+        LOGGING_FILE_PATH            = f'logs\web\{get_current_time_apply_to_filename()}.log'                           # 设置logging文件输出路径
         # upload文件上传配置
-        UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/" # 设置上传文件存储路径
+        UPLOAD_FILE_STORAGE_PATH     = "Y:/Studyplace_Web_Development/Gateway_System/storage/upload/"                   # 设置上传文件存储路径
         # pika任务队列名称
         PIKA_TASKQUEUE_NAME          = 'web_task_queue_for_windows'
     else:                           # ! Linux
-        SQLALCHEMY_DATABASE_URI      = f"sqlite:///{os.getcwd()}/db/gateway.db"
-        LOGGING_FILE_PATH            = f'logs/web/{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
+        SQLALCHEMY_DATABASE_URI      = f"sqlite:////home/nano/Gateway_System/db/gateway.db"
+        LOGGING_FILE_PATH            = f'/home/nano/Gateway_System/logs/web/{get_current_time_apply_to_filename()}.log' # 设置logging文件输出路径
         # upload文件上传配置
-        UPLOAD_FILE_STORAGE_PATH     = "storage/upload/" # 设置上传文件存储路径
+        UPLOAD_FILE_STORAGE_PATH     = "/home/nano/Gateway_System/storage/upload/"                                      # 设置上传文件存储路径
         # pika任务队列名称
         PIKA_TASKQUEUE_NAME          = 'web_task_queue_for_linux'
 
