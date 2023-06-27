@@ -5,7 +5,7 @@ import pika
 from concurrent.futures  import ThreadPoolExecutor, ProcessPoolExecutor, wait, ALL_COMPLETED
 
 from .config             import Config
-from .utils.get_time     import cal_diff_time_between_date1_and_date2, get_current_time, get_current_time_apply_to_filename, get_current_time_with_ms_and_bias, get_current_time_with_ms
+from .utils.get_time     import *
 from .device_manager     import *
 from .task_queue         import *
 from .models.model       import *
