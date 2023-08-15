@@ -23,7 +23,7 @@
 
 ## Directory structure:
 - Gateway System
-  - control  : 通信设备驱动代码（TODO 后期用C++重构）
+  - control  : 通信设备驱动代码（后期用C++重构）
   - db       : 数据库
   - logs     : 驱动及Develop开发Web日志文件（Product发布的Web日志存储在Apache目录）
   - storage  : 文件存储（设备驱动接收到的文件，用户上传至Web服务器的文件）
