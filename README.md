@@ -29,8 +29,24 @@
   - storage  : received files and uploaded files
   - web      : web applicaton based on Flask
 
+## Display
+```
+登录界面：用户输入账户信息登录
+```
 ![登录界面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/9baa0132-58d1-4a10-b7ab-10a45f8d69aa)
+```
+设备信息页面：查看和编辑设备
+```
 ![设备信息页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/b0d702c1-7c6c-422d-b5df-875c35716600)
+```
+本地文件页面：上传需要传输的文件至服务器
+```
 ![本地文件页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/6a94dfd0-cd81-4623-97c0-c5ac0464961a)
+```
+任务管理页面：发布任务给设备传输指定文件
+```
 ![任务管理页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/9b80cfef-2f1f-4ced-9a52-50d0dde1d371)
+```
+设备流量页面：统计设备历史流量
+```
 ![设备流量页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/cb58c34a-624e-4081-a2b9-5ffdc09be168)
