@@ -36,11 +36,11 @@ def create_web():
 if __name__ == "__main__":
     # 创建driver进程
     proc_control = Process(target=create_control, args=())
-    proc_control.start()
+    # proc_control.start()
 
-    # # 创建测试web服务器进程
-    # proc_web = Process(target=create_web, args=())
-    # proc_web.start()
+    # 创建测试web服务器进程
+    proc_web = Process(target=create_web, args=())
+    proc_web.start()
 
-    proc_control.join()
-    # proc_web.join()
+    # proc_control.join()
+    proc_web.join()
