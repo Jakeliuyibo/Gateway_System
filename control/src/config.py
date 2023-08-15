@@ -5,7 +5,7 @@ Date: 2023-04-29 22:20:06
 LastEditors: liuyibo 1299502716@qq.com
 LastEditTime: 2023-05-03 16:15:29
 FilePath: \Gateway_System\config.py
-Description: 全局配置
+Description: 驱动全局配置
 '''
 import os
 import logging
