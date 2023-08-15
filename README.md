@@ -29,8 +29,8 @@
   - storage  : received files and uploaded files
   - web      : web applicaton based on Flask
 
-![登录界面](https://user-images.githubusercontent.com/49876032/221079815-56105437-96dd-438b-af9a-f8976a88845f.png)
-![设备信息](//storage/demo/设备信息页面.png)
-![文件管理](//storage/demo/本地文件页面.png)
-![任务管理](//storage/demo/任务管理页面.png)
-![流量管理](//storage/demo/设备流量页面.png)
+![登录界面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/9baa0132-58d1-4a10-b7ab-10a45f8d69aa)
+![设备信息页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/b0d702c1-7c6c-422d-b5df-875c35716600)
+![本地文件页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/6a94dfd0-cd81-4623-97c0-c5ac0464961a)
+![任务管理页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/9b80cfef-2f1f-4ced-9a52-50d0dde1d371)
+![设备流量页面](https://github.com/Jakeliuyibo/Gateway_System/assets/49876032/cb58c34a-624e-4081-a2b9-5ffdc09be168)
