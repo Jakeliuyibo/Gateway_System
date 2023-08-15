@@ -1,0 +1,41 @@
+2023-06-27 17:20:02,348 - __init__.py:init_device[line:18] - CRITICAL: 初始化网关设备驱动 start...
+2023-06-27 17:20:02,428 - device_manager.py:open[line:74] - ERROR: 失败打开设备('光纤通信机101')
+2023-06-27 17:20:02,439 - device_manager.py:open[line:74] - ERROR: 失败打开设备('电台数传模块206')
+2023-06-27 17:20:02,504 - device_manager.py:open[line:74] - ERROR: 失败打开设备('天通通信模块2')
+2023-06-27 17:20:02,608 - device_manager.py:open[line:74] - ERROR: 失败打开设备('水声通信设备20')
+2023-06-27 17:20:02,608 - device_manager.py:open[line:72] - CRITICAL: 成功打开设备('光纤通信机100')
+2023-06-27 17:20:02,610 - device_manager.py:open[line:72] - CRITICAL: 成功打开设备('电台数传模块205')
+2023-06-27 17:20:02,610 - device_manager.py:open[line:72] - CRITICAL: 成功打开设备('天通通信模块1')
+2023-06-27 17:20:02,611 - device_manager.py:open[line:72] - CRITICAL: 成功打开设备('水声通信设备10')
+2023-06-27 17:20:02,654 - core_scheduling.py:init_device_list_threadhandle[line:69] - CRITICAL: 完成设备列表初始化，存在8个设备
+2023-06-27 17:20:02,682 - core_scheduling.py:monitor_web_task_threadhandle[line:254] - WARNING: SUCCESS : Create Pika server.
+2023-06-27 17:20:14,433 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:16,922 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:16,923 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125145
+2023-06-27 17:20:19,327 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125146
+2023-06-27 17:20:24,389 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:26,786 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125147
+2023-06-27 17:20:30,219 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:32,645 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125148
+2023-06-27 17:20:34,282 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:36,705 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125149
+2023-06-27 17:20:38,363 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:40,810 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125150
+2023-06-27 17:20:41,543 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:43,964 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125151
+2023-06-27 17:20:44,301 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:46,784 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125152
+2023-06-27 17:20:46,786 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:49,241 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125153
+2023-06-27 17:20:49,245 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:51,666 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125154
+2023-06-27 17:20:52,449 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:54,831 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125155
+2023-06-27 17:20:55,929 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:20:58,378 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125156
+2023-06-27 17:22:28,766 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:22:31,251 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125157
+2023-06-27 17:22:34,603 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:22:37,050 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125158
+2023-06-27 17:22:38,878 - msocket.py:__init__[line:106] - WARNING: 客户端成功连接至服务器192.168.1.102:8102
+2023-06-27 17:22:41,267 - core_scheduling.py:deal_data_forwarding_callback[line:190] - CRITICAL: 线程池回调 ： 完成DIRECT_FILE_TO_DEVICE任务125159
