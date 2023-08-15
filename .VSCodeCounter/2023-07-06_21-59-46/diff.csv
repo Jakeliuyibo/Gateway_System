@@ -1,0 +1,14 @@
+"filename", "language", "Python", "Database", "comment", "blank", "total"
+"y:\Studyplace_Web_Development\Gateway_System\backup\bsp_satellite_comm.py", "Python", 92, 0, 18, 16, 126
+"y:\Studyplace_Web_Development\Gateway_System\backup\bsp_underwater_acoustic_comm.py", "Python", 153, 0, 33, 35, 221
+"y:\Studyplace_Web_Development\Gateway_System\backup\mserial.py", "Python", 77, 0, 20, 12, 109
+"y:\Studyplace_Web_Development\Gateway_System\control\src\core_scheduling.py", "Python", 0, 0, 2, 0, 2
+"y:\Studyplace_Web_Development\Gateway_System\control\src\device_manager.py", "Python", 2, 0, -1, 0, 1
+"y:\Studyplace_Web_Development\Gateway_System\control\src\driver\bsp_satellite_comm.py", "Python", 16, 0, 4, 8, 28
+"y:\Studyplace_Web_Development\Gateway_System\control\src\driver\bsp_underwater_acoustic_comm.py", "Python", 0, 0, 1, 0, 1
+"y:\Studyplace_Web_Development\Gateway_System\control\src\utils\get_time.py", "Python", 2, 0, -2, 2, 2
+"y:\Studyplace_Web_Development\Gateway_System\db\gateway.db", "Database", 0, -10, 0, 0, -10
+"y:\Studyplace_Web_Development\Gateway_System\main.py", "Python", 4, 0, -2, 0, 2
+"y:\Studyplace_Web_Development\Gateway_System\web\app\utils\get_time.py", "Python", 6, 0, 2, 2, 10
+"y:\Studyplace_Web_Development\Gateway_System\web\app\views\device\views.py", "Python", 1, 0, 0, 1, 2
+"Total", "-", 353, -10, 75, 76, 494
